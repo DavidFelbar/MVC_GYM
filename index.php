@@ -1,9 +1,6 @@
 <?php
-    echo 'alooooo';
-    echo 'Nine Nane';
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+    require_once './routes/Routes.php';
+    function autoloader($class_name){
+        require_once 'klase/'.$class_name.'.php';
+    }
+    spl_autoload_register('autoloader');
