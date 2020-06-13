@@ -10,16 +10,17 @@ class Program {
 
     public function __construct($id = false) {
         if ($id) {
-            $c = DB::connect();
+            $db = DB::connect();
             $sql = "SELECT * FROM programi WHERE id = $id LIMIT 1";
-            $r = $c->query($sql);
+            $r = $db->query($sql);
             $row = $r->fetch_assoc();
+            
             // POSTAVI VRIJEDNOSTI ATRIBUTA
             $this->id = $row['idProg'];
             $this->naziv = $row['nazivProg'];
             $this->opis=$row['opisProg'];
             $this->tip=$row['tipProg'];
-            $this->ocjena=$row['tipProg'];
+            $this->ocj=$row['ocjena'];
         }
     }
 
@@ -38,24 +39,24 @@ class Program {
         return $this->tip;
     }
     public function GetProgOcj() {
-        return $this->ocjena;
+        return $this->ocj;
     }
 
-    public function SetProgID() {
+    public function SetProgID($id) {
          $this->id=$id;
     }
 
-    public function SetProgNaziv() {
+    public function SetProgNaziv($naziv) {
          $this->naziv=$naziv;
     }
 
-    public function SetProgOpis() {
+    public function SetProgOpis($opis) {
          $this->opis=$opis;
     }
-    public function SetProgTip() {
+    public function SetProgTip($tip) {
          $this->tip=$tip;
     }
-    public function SetProgOcj() {
+    public function SetProgOcj($ocjena) {
          $this->ocjena=$ocjena;
     }
 }

@@ -38,18 +38,18 @@ class Clanarina {
         return $this->maxDolasci;
     }
    
-    public function SetClanarId() {
+    public function SetClanarId($idClan) {
          $this->idClan=$idClan;
     }
 
-    public function  SetClanarNaziv() {
+    public function  SetClanarNaziv($nazivClan) {
          $this->nazivClan=$nazivClan;
     }
 
-    public function  SetClanarCijena() {
+    public function  SetClanarCijena($cijena) {
          $this->cijena=$cijena;
     }
-    public function  SetClanarDolasci() {
+    public function  SetClanarDolasci($maxDolasci) {
          $this->maxDolasci=$maxDolasci;
     }
    

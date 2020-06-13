@@ -1,6 +1,6 @@
 <?php
 
-include './models/Program.php';
+require_once ('./model/Program.php');
 
 class Programi {
 
@@ -15,12 +15,12 @@ class Programi {
         $sql = "SELECT idProg, nazivProg,opisProg,tipProg,ocjena FROM programi";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
-            $p = new Kategorija();
-            $p->SetProgId($row['idProg']);
-            $p->SetProgNaziv($row['nazivProg']);
-            $p->SetProgOpis($row['opisProg']);
-            $p->SetProgTip($row['tipProg']);
-            $p->SetProgOcj($row['ocjena']);
+            $p = new Program();
+            $p->GetProgId($row['idProg']);
+            $p->GetProgNaziv($row['nazivProg']);
+            $p->GetProgOpis($row['opisProg']);
+            $p->GetProgTip($row['tipProg']);
+            $p->GetProgOcj($row['ocjena']);
             $this->programi[] = $p;
         }
 

@@ -8,11 +8,11 @@ class Pomocna {
         $r = $db->query("SELECT * FROM programi");
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
-            $p->GetId($row['idProg']);
-            $p->GetNaziv($row['nazivProg']);
-            $p->GetProgOpis($row['opisProg']);
-            $p->GetProgTip($row['tipProg']);
-            $p->GetProgOcj($row['ocjena']);
+            $p->SetProgId($row['idProg']);
+            $p->SetProgNaziv($row['nazivProg']);
+            $p->SetProgOpis($row['opisProg']);
+            $p->SetProgTip($row['tipProg']);
+            $p->SetProgOcj($row['ocjena']);
             $programi[] = $p;
         }
         return $programi;
@@ -21,13 +21,13 @@ class Pomocna {
     public static function GetClanarine() {
         global $db;
         $clanarine = array();
-        $r = $db->query("SELECT * FROM clanarine");
+        $r = $db->query("SELECT * FROM clanarina");
         while ($row = $r->fetch_assoc()) {
-            $c = new Program();
-            $c->GetClanarId($row['idClan']);
-            $c->GetClanarNaziv($row['nazivClan']);
-            $c-GetClanarCijena($row['cijena']);
-            $c->GetClanarDolasci($row['maxDolasci']);
+            $c = new Clanarina();
+            $c->SetClanarId($row['idClan']);
+            $c->SetClanarNaziv($row['nazivClan']);
+            $c->SetClanarCijena($row['cijena']);
+            $c->SetClanarDolasci($row['maxDolasci']);
             
             $clanarine[] = $c;
         }
