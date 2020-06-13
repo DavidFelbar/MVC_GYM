@@ -1,15 +1,15 @@
 <?php
 
 Route::set('Pocetna',function(){
-    echo 'Pocetna';
+    Pocetna::CreateView();
 });
 
 Route::set('Programi',function(){
-    echo 'Programi';
+    Programi::CreateView();
 });
 
 Route::set('Clanarina',function(){
-    echo 'Clanarina';
+    Clanarina::CreateView();
 });
 /* 
  * To change this license header, choose License Headers in Project Properties.
