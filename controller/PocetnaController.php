@@ -1,5 +1,5 @@
 <?php
-class Pocetna extends Controller
+class Pocetna 
 {
     
 }

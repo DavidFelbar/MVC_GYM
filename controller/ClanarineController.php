@@ -1,6 +1,5 @@
 <?php
-class Clanarine extends Controller
-{
+class Clanarine {
     
 }
 /* 
