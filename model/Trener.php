@@ -64,4 +64,4 @@ class Trener {
     }
 
 }
-include '../view/indexTreneri.php';
+include '../view/indexTrener.php';
