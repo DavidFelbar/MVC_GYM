@@ -6,8 +6,8 @@ $db = Db::connect();
 $username = $_POST['username'];
 $pass = ($_POST['pass']);
 echo $username;
-$upit = "SELECT * FROM clanovi WHERE usernameClana='$username' AND 
-		 passwordClana = '$pass' LIMIT 1";
+$upit = "SELECT * FROM zaposlenici WHERE usernameZap='$username' AND 
+		 passwordZap = '$pass' LIMIT 1";
 $r = $db->query($upit);
 
 // JE LI PRONAĐEN?
@@ -20,7 +20,7 @@ if ($r && $r->num_rows == 1) {
     switch ($row['idKor']) {
         case 3: header("Location: Admin.php");
             break;
-        case 2: header("Location: Zaposlenici.php");
+        case 2: header("Location: Trener.php");
             break;
         default: header("Location: ../index.php");
     }
