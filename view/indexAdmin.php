@@ -11,4 +11,4 @@ include './controlelr/ClanoviController.php';
 include './model/Zaposlenik.php';
 include './controller/ZaposlenikController.php';
 
-if(isset($_COOKIE['username']))
+//if(isset($_COOKIE['username']))
