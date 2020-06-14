@@ -1,5 +1,5 @@
 <?php
-
+require_once('../klase/DB.php');
 $db = DB::connect();
 
 
