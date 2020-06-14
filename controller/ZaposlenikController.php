@@ -20,7 +20,7 @@ class Zaposlenici {
             $z->GetZapPrezime($row['prezimeZap']);
             $z->GetIdKor($row['idKor']);
             $z->GetIdProg($row['idProg']);
-            $this->clanarina[] = $z;
+            $this->zaposlenik[] = $z;
         }
 
         return $this->zaposlenik;
