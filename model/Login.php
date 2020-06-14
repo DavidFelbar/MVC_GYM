@@ -16,7 +16,7 @@ if ($r && $r->num_rows == 1) {
     session_start();
     $row = $r->fetch_assoc();
     $_SESSION['login'] = $username;
-    header("Location: ../model/Clanovi.php");
+    header("Location: ../view/indexClanovi.php");
 } else {
     //header("Location: ../index.php");
 }
