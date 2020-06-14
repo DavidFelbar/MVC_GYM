@@ -1,6 +1,6 @@
 <?php
 
-class Admin {
+class Zaposlenik {
 
     private $idZap;
     private $imeZap;
