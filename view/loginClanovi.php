@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<h1>LOGIN ZA ZAPOSLENIKE</h1>
+<h1>LOGIN ZA ČLANOVE</h1>
 <form name="form1" method="post" action ="../model/Login.php">
   <p>Username: 
     <input name="username" type="text" id="username">
