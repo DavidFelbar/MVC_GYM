@@ -1,7 +1,4 @@
-<?php
-include 'loginClanovi.php';
-include 'loginZaposlenici.php';
-?>
+
 <html>
     <!-- PRIKAZ POCETNE STRANICE -->
     <head>
@@ -32,7 +29,9 @@ include 'loginZaposlenici.php';
 
     <body>
         
-        <h1 class='uzglavlje'>MVC GYM  </h1> <h2 class='loginZaposlenici'><a href='./view/loginZaposlenici.php'>Login zaposlenici</a></h2> <h2 class='loginClanovi'><a href='./view/loginClanovi.php'>Login clanovi</a></h2>
+        <h1 class='uzglavlje'>MVC GYM  </h1> 
+        <h2 class='loginZaposlenici'><a href='./view/loginZaposlenici.php'>Login zaposlenici</a></h2> 
+        <h2 class='loginClanovi'><a href='./view/loginClanovi.php'>Login clanovi</a></h2>
         
     </table>
     </body>

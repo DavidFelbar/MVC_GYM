@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 13, 2020 at 02:12 PM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Generation Time: Jun 14, 2020 at 02:22 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -52,8 +52,17 @@ CREATE TABLE IF NOT EXISTS `clanovi` (
   `idClan` int(1) NOT NULL,
   `dolasci` int(2) NOT NULL,
   `idKor` int(1) NOT NULL,
+  `username` varchar(255) COLLATE utf8_croatian_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_croatian_ci NOT NULL,
   PRIMARY KEY (`idClana`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Dumping data for table `clanovi`
+--
+
+INSERT INTO `clanovi` (`idClana`, `imeClana`, `prezimeClana`, `idProg`, `idClan`, `dolasci`, `idKor`, `username`, `password`) VALUES
+(1, 'Jurza', 'Fox', 1, 1, 10, 1, 'jurz', 'jurz');
 
 -- --------------------------------------------------------
 
