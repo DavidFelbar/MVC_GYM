@@ -64,4 +64,4 @@ class Admin {
     }
 
 }
-//include '../view/indexAdmin.php';
+include '../view/indexAdmin.php';
