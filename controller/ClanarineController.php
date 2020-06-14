@@ -11,7 +11,7 @@ class Clanarine {
         $this->db = DB::connect();
     }
 
-    public function dohvatiPrograme() {
+    public function dohvatiClanarine() {
         $sql = "SELECT idClan,nazivClan,cijena,maxDolasci FROM clanarina";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
@@ -27,13 +27,13 @@ class Clanarine {
         return $this->clanarina;
     }
 
-    public function brisi($id) {
-        $sql = "DELETE FROM clanarina WHERE id=$id LIMIT 1";
+    public function brisiClanarine($idClan) {
+        $sql = "DELETE FROM clanarina WHERE id=$idClan LIMIT 1";
         $this->db->query($sql);
     }
 
-    public function unos($naziv,$opisProg,$tipProg,$ocjena) {
-        $sql = "INSERT INTO programi(nazivProg,opisProg,tipProg,ocjena) VALUES ('$naziv,$opisProg,$tipProg,$ocjena')";
+    public function unosClanarine($idClan,$nazivClan,$cijena,$maxDolasci) {
+        $sql = "INSERT INTO clanarina(idClan,nazivClan,cijena,maxDolasci) VALUES ('$idClan,$nazivClan,$cijena,$maxDolasci')";
         $this->db->query($sql);
     }
 

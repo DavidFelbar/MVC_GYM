@@ -5,10 +5,12 @@ include ('./model/Program.php');
 include('./controller/ProgramiController.php');
 include ('./model/Clanarine.php');
 include('./controller/ClanarineController.php');
-
+include './view/loginClanovi.php';
+include './view/loginZaposlenici.php';
  $db=DB::connect();
 
  $programi=Pomocna::GetProgrami();
  $clanarine=Pomocna::GetClanarine();
- var_dump($programi,$clanarine);
+ 
+ include './view/index.php';
 ?>

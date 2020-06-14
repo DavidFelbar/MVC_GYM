@@ -10,7 +10,7 @@ class Zaposlenici {
         $this->db = DB::connect();
     }
 
-    public function dohvatiPrograme() {
+    public function dohvatiZaposlenike() {
         $sql = "SELECT idZap,imeZap,prezimeZap,idKor,idProg FROM zaposlenici";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
@@ -26,13 +26,13 @@ class Zaposlenici {
         return $this->zaposlenik;
     }
 
-    public function brisi($id) {
-        $sql = "DELETE FROM clanarina WHERE id=$id LIMIT 1";
+    public function brisiZaposlenike($idZap) {
+        $sql = "DELETE FROM zaposlenici WHERE id=$idZap LIMIT 1";
         $this->db->query($sql);
     }
 
-    public function unos($naziv,$opisProg,$tipProg,$ocjena) {
-        $sql = "INSERT INTO programi(nazivProg,opisProg,tipProg,ocjena) VALUES ('$naziv,$opisProg,$tipProg,$ocjena')";
+    public function unosZaposlenika($idZap,$imeZap,$prezimeZap,$idKor,$idProg) {
+        $sql = "INSERT INTO zaposlenici(idZap,imeZap,prezimeZap,idKor,idProg) VALUES ('$idZap,$imeZap,$prezimeZap,$idKor,$idProg')";
         $this->db->query($sql);
     }
 
