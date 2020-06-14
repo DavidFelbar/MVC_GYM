@@ -16,7 +16,7 @@ if ($r && $r->num_rows == 1) {
     session_start();
     $row = $r->fetch_assoc();
     $_SESSION['login'] = $username;
-    header("Location: Clanovi.php");
+    header("Location: ../Admin/Clanovi.php");
 } else {
     header("Location: ../index.php");
 }

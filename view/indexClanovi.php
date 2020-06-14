@@ -5,8 +5,6 @@ include ('../model/Program.php');
 include('../controller/ProgramiController.php');
 include ('../model/Clanarine.php');
 include('../controller/ClanarineController.php');
-
 include '../controller/ClanoviController.php';
 
-echo 'ja sam član';
-    
+echo 'ja sam clan';
