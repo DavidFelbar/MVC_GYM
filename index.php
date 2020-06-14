@@ -5,8 +5,7 @@ include ('./model/Program.php');
 include('./controller/ProgramiController.php');
 include ('./model/Clanarine.php');
 include('./controller/ClanarineController.php');
-include './view/loginClanovi.php';
-include './view/loginZaposlenici.php';
+
 include './model/Clanovi.php';
 include './controller/ClanoviController.php';
  $db=DB::connect();
