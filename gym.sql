@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 14, 2020 at 04:01 PM
+-- Generation Time: Jun 14, 2020 at 09:36 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -63,7 +63,15 @@ CREATE TABLE IF NOT EXISTS `clanovi` (
   `dolasci` int(2) DEFAULT NULL,
   `idKor` int(1) NOT NULL,
   PRIMARY KEY (`idClana`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Dumping data for table `clanovi`
+--
+
+INSERT INTO `clanovi` (`idClana`, `usernameClana`, `passwordClana`, `imeClana`, `prezimeClana`, `idProg`, `idClan`, `dolasci`, `idKor`) VALUES
+(1, 'david', 'david', 'David', 'Felbar', NULL, NULL, NULL, 3),
+(3, 'david2', 'david2', '', '', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
