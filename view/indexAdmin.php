@@ -1,14 +1,12 @@
 <?php
 
-include('./klase/DB.php');
-include('./klase/Pomocna.php');
-include ('./model/Program.php');
-include('./controller/ProgramiController.php');
-include ('./model/Clanarine.php');
-include('./controller/ClanarineController.php');
-include './model/Clanovi.php';
-include './controlelr/ClanoviController.php';
-include './model/Zaposlenik.php';
-include './controller/ZaposlenikController.php';
+include('../klase/DB.php');
+include('../klase/Pomocna.php');
+include ('../model/Program.php');
+include('../controller/ProgramiController.php');
+include ('../model/Clanarine.php');
+include('../controller/ClanarineController.php');
+include '../model/Clanovi.php';
+include '../controller/ClanoviController.php';
 
-//if(isset($_COOKIE['username']))
+echo 'VID mene';

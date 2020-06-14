@@ -14,19 +14,19 @@ $r = $db->query($upit);
 if ($r && $r->num_rows == 1) {
     session_start();
     $row = $r->fetch_assoc();
-    $_SESSION['login'] = $username;
-    $_SESSION['tip'] = $row['idKor'];
+    $_SESSION['userClan'] = $username;
+    $_SESSION['idKor'] = $row['idKor'];
 
     switch ($row['idKor']) {
-        case 1: header("Location: ../view/indexAdmin.php");
+        case 3: header("Location: Admin.php");
             break;
-        case 2: header("Location: ../view/indexZaposlenici.php");
+        case 2: header("Location: Zaposlenici.php");
             break;
-        default: header("Location: ../view/index.php");
+        default: header("Location: ../index.php");
     }
 }
     else  {
-    header("Location: index.php");
+    header("Location: ../view/index.php");
 }
 ?>
 

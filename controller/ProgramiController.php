@@ -1,6 +1,5 @@
 <?php
 
-require_once ('./model/Program.php');
 
 class Programi {
 

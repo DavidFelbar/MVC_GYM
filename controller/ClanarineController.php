@@ -1,6 +1,5 @@
 <?php
 
-require_once ('./model/Clanarine.php');
 
 class Clanarine {
 

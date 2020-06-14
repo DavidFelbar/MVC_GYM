@@ -98,4 +98,3 @@ class Clan {
     }
    
 }
- include './view/indexClanovi.php';

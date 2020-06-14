@@ -1,13 +1,16 @@
 <?php
-include('./klase/DB.php');
-include('./klase/Pomocna.php');
-include ('./model/Program.php');
-include('./controller/ProgramiController.php');
-include ('./model/Clanarine.php');
-include('./controller/ClanarineController.php');
+require_once('./klase/DB.php');
+require_once('./klase/Pomocna.php');
+require_once ('./model/Program.php');
+require_once ('./model/Admin.php');
+require_once ('./model/Clanarine.php');
+require_once ('./model/Clanovi.php');
+require_once ('./model/Login.php');
+require_once ('./model/Program.php');
+require_once ('./model/Trener.php');
+require_once ('./model/aLogin.php');
 
-include './model/Clanovi.php';
-include './controller/ClanoviController.php';
+
  $db=DB::connect();
  
  $programi=Pomocna::GetProgrami();
