@@ -1,24 +1,29 @@
 <?php
 
-
 class Register {
 
-    // private $idRegister;
-    private $usernameRegister=$_POST['usernameRegister'];
-    private $passwordRegister=$_POST['passwordRegister'];
-    private $imeRegister=$_POST['imeRegister'];
-    private $prezimeRegister= $_POST['prezimeRegister'];
+    private $usernameRegister;
+    private $passwordRegister;
+    private $imeRegister;
+    private $prezimeRegister;
 
-    public function __construct($id = false) {
+    public function __construct() {
         if (isset($_POST['usernameRegister'])) {
-             $db = DB::connect();
-            // $session['idClana']=$_POST['registerId']; //ovo mozda nece trebat jer cemo autoincrement stavit na id
-            $this->usernameRegister=$session['usernameRegister'] ;
-            $session['passwordRegister'] ;
-            $session['imeRegister'] ;
-            $session['prezimeRegister'] ;
-
+            $this->usernameRegister = $_POST['usernameRegister'];
+            $this->passwordRegister = $_POST['passwordRegister'];
+            $this->imeRegister = $_POST['imeRegister'];
+            $this->prezimeRegister = $_POST['prezimeRegister'];
         }
+    }
+
+    public function postavi() {
+
+        $db = DB::connect();
+// $session['idClana']=$_POST['registerId']; //ovo mozda nece trebat jer cemo autoincrement stavit na id
+       $session['usernameRegister']=$this->usernameRegister;
+        $session['passwordRegister']= $this->passwordRegister;
+        $session['imeRegister']= $this->imeRegister;
+        $session['prezimeRegister']= $this->prezimeRegister;
     }
 
 }
