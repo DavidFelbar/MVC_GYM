@@ -8,7 +8,11 @@
         $SESSION['passwordRegister']=$_POST['passwordRegister'];
         $SESSION['imeRegister']=$_POST['imeRegister'];
         $SESSION['prezimeRegister']=$_POST['prezimeRegister'];
-        var_dump($SESSION);
-        
+        $user=$SESSION['usernameRegister'];
+        $passw= $SESSION['passwordRegister'];
+        $ime=$SESSION['imeRegister'];
+        $prez=$SESSION['prezimeRegister'];
+       // var_dump($SESSION);
+       
     }
 ?>

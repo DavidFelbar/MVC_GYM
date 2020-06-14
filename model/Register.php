@@ -1,5 +1,6 @@
 <?php
 
+include '../klase/DB.php';
 class Register {
 
     private $usernameRegister;
@@ -16,14 +17,14 @@ class Register {
         }
     }
 
-    public function postavi() {
+    public static function postavi() {
 
         $db = DB::connect();
 // $session['idClana']=$_POST['registerId']; //ovo mozda nece trebat jer cemo autoincrement stavit na id
-       $session['usernameRegister']=$this->usernameRegister;
-        $session['passwordRegister']= $this->passwordRegister;
-        $session['imeRegister']= $this->imeRegister;
-        $session['prezimeRegister']= $this->prezimeRegister;
+        $SESSION['usernameRegister']=$usernameRegister;
+        $SESSION['passwordRegister']= $passwordRegister;
+        $SESSION['imeRegister']= $imeRegister;
+        $SESSION['prezimeRegister']= $prezimeRegister;
     }
 
 }

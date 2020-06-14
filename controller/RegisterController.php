@@ -9,7 +9,7 @@ class Registracija {
         $this->db = DB::connect();
     }
     
-    public function registrirajClana($usernameRegister,$passwordRegister,$imeRegister,$prezimeRegister,$idKor=1) {
+    public  function registrirajClana($usernameRegister,$passwordRegister,$imeRegister,$prezimeRegister,$idKor=1) {
         $check="SELECT usernameClana from clanovi";
         $ch = $this->db->query($check);
         while ($row = $ch->fetch_assoc()) {
@@ -18,7 +18,7 @@ class Registracija {
             $this->clanovi[] = $cu;
         }
         if(!in_array($usernameRegister, $clanovi)){
-        $sql = "INSERT INTO clanovi(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idKor) VALUES ('$usernameRegister,$passwordRegister,$imeClana,$imeRegister,$prezimeRegister,$idKor)";
+        $sql = "INSERT INTO clanovi(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idKor) VALUES ('$usernameRegister,$passwordRegister,$imeRegister,$prezimeRegister,$idKor)";
         $this->db->query($sql);
         }else{
             echo 'Korisničko ime već postoji, pokušajte sa drugim!';
