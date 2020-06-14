@@ -96,4 +96,6 @@ class Clan {
     public function SetIdKor($idKor) {
         $this->idKor = $idKor;
     }
+   
 }
+ include './view/indexClanovi.php';

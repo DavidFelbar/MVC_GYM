@@ -5,9 +5,9 @@ $db = Db::connect();
 
 $username = $_POST['username'];
 $pass = ($_POST['pass']);
-
-$upit = "SELECT * FROM korisnici WHERE username='$username' AND 
-		 password = '$pass' LIMIT 1";
+echo $username;
+$upit = "SELECT * FROM clanovi WHERE usernameClana='$username' AND 
+		 passwordClana = '$pass' LIMIT 1";
 $r = $db->query($upit);
 
 // JE LI PRONAĐEN?
@@ -17,12 +17,12 @@ if ($r && $r->num_rows == 1) {
     $_SESSION['login'] = $username;
     $_SESSION['tip'] = $row['idKor'];
 
-    switch ($row['vk_tip']) {
-        case 1: header("Location: indexAdmin.php");
+    switch ($row['idKor']) {
+        case 1: header("Location: ../view/indexAdmin.php");
             break;
-        case 2: header("Location: indexZaposlenici.php");
+        case 2: header("Location: ../view/indexZaposlenici.php");
             break;
-        default: header("Location: index.php");
+        default: header("Location: ../view/index.php");
     }
 }
     else  {

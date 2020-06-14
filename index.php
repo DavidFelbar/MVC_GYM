@@ -9,7 +9,7 @@ include('./controller/ClanarineController.php');
 include './model/Clanovi.php';
 include './controller/ClanoviController.php';
  $db=DB::connect();
-
+ 
  $programi=Pomocna::GetProgrami();
  $clanarine=Pomocna::GetClanarine();
  
