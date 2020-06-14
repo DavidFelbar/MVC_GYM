@@ -1,10 +1,11 @@
-<?php
-// OVDJE TREBA FORMA ZA LOGIN ZAPOSLENIKA PA CEMO DODAT COOKIES
-
-
+<<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
 <body>
 
-<form name="form2" method="post" action="LoginAdmin.php">
+<form name="form2" method="post" action="aLogin.php">
   <p>Username: 
     <input name="username" type="text" id="username">
   </p>

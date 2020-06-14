@@ -18,6 +18,6 @@ if ($r && $r->num_rows == 1) {
     $_SESSION['login'] = $username;
     header("Location: ../view/indexClanovi.php");
 } else {
-    //header("Location: ../index.php");
+    header("Location: ../index.php");
 }
 ?>
