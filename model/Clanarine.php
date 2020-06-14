@@ -34,7 +34,7 @@ class Clanarina {
     public function  GetClanarCijena() {
         return $this->cijena;
     }
-    public function  GetClanarDolasci() {
+    public function  GetDolasci() {
         return $this->maxDolasci;
     }
    

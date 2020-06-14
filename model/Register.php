@@ -15,10 +15,10 @@ class Register {
             $this->passwordRegister = $_POST['passwordRegister'];
             $this->imeRegister = $_POST['imeRegister'];
             $this->prezimeRegister = $_POST['prezimeRegister'];
-            $SESSION['usernameRegister'] = $this->usernameRegister;
-            $SESSION['passwordRegister'] = $this->passwordRegister;
-            $SESSION['imeRegister'] = $this->imeRegister;
-            $SESSION['prezimeRegister'] = $this->prezimeRegister;
+            $_SESSION['usernameRegister'] = $this->usernameRegister;
+            $_SESSION['passwordRegister'] = $this->passwordRegister;
+            $_SESSION['imeRegister'] = $this->imeRegister;
+            $_SESSION['prezimeRegister'] = $this->prezimeRegister;
         }
     }
 

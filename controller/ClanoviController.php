@@ -24,18 +24,18 @@ class Clanovi {
             $cl->GetIdClanarine($row['idClan']);
             $cl->GetClanDolasci($row['dolasci']);
             $cl->GetIdKor($row['idKor']);
-            $this->clanarina[] = $cl;
+            $this->Clan[] = $cl;
         }
 
         return $this->Clan;
     }
 
-    public function brisiClanove($idZap) {
+    public function brisiClanove($idClana) {
         $sql = "DELETE FROM clanovi WHERE id=$idZap LIMIT 1";
         $this->db->query($sql);
     }
 
-    public function unosClanova($idZap,$usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
+    public function unosClanova($idClana,$usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
         $sql = "INSERT INTO zaposlenici(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ('$idClana,$usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
         $this->db->query($sql);
     }

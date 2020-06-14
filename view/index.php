@@ -28,7 +28,11 @@
     </head>
 
     <body>
-        
+        <?php
+        $cl=new Clanarine();
+            $cl->dohvatiClanarine();
+            var_dump($cl);
+        ?>
         <h1 class='uzglavlje'>MVC GYM  </h1> 
         <h2 class='loginZaposlenici'><a href='loginZaposlenici.php'>Login zaposlenici</a></h2> 
         <h2 class='loginClanovi'><a href='loginClanovi.php'>Login clanovi</a></h2>
