@@ -36,7 +36,7 @@
         <h1 class='uzglavlje'>MVC GYM  </h1> 
         <h2 class='loginZaposlenici'><a href='loginZaposlenici.php'>Login zaposlenici</a></h2> 
         <h2 class='loginClanovi'><a href='loginClanovi.php'>Login clanovi</a></h2>
-        <h2 class="registerClanovi"> <a href="registerClanovi.php">Registracija članova</a></h2>
+       
     </table>
     </body>
 </html>

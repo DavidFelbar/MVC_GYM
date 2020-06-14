@@ -11,7 +11,7 @@ class Clanarina {
     public function __construct($idClan = false) {
         if ($idClan) {
             $db = DB::connect();
-            $sql = "SELECT * FROM clanarina WHERE id = $id LIMIT 1";
+            $sql = "SELECT * FROM clanarina";
             $r = $db->query($sql);
             $row = $r->fetch_assoc();
             // POSTAVI VRIJEDNOSTI ATRIBUTA
