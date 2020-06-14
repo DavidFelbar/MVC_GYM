@@ -2,37 +2,37 @@
 
 class Admin {
 
-    private $idAdmin;
-    private $imeAdmin;
-    private $prezimeAdmin;
+    private $idZap;
+    private $imeZap;
+    private $prezimeZap;
     private $idKor;
     private $idProg;
 
-    public function __construct($idAdmin = false) {
-        if ($idAdmin) {
+    public function __construct($idZap = false) {
+        if ($idZap) {
             $db = DB::connect();
-            $sql = "SELECT * FROM zaposlenici WHERE id = $idAdmin LIMIT 1";
+            $sql = "SELECT * FROM zaposlenici WHERE id = $idZap LIMIT 1";
             $r = $db->query($sql);
             $row = $r->fetch_assoc();
             // POSTAVI VRIJEDNOSTI ATRIBUTA
-            $this->idAdmin = $row['idZap'];
-            $this->imeAdmin = $row['imeZap'];
-            $this->prezimeAdmin = $row['prezimeZap'];
+            $this->idZap = $row['idZap'];
+            $this->imeZap = $row['imeZap'];
+            $this->prezimeZap = $row['prezimeZap'];
             $this->idKor = $row['idKor'];
             $this->idProg = $row['idProg'];
         }
     }
 
-    public function GetAdminnId() {
-        return $this->idAdmin;
+    public function GetZapId() {
+        return $this->idZap;
     }
 
-    public function GetAdminIme() {
-        return $this->imeAdmin;
+    public function GetZapIme() {
+        return $this->imeZap;
     }
 
-    public function GetAdminPrezime() {
-        return $this->prezimeAdmin;
+    public function GetZapPrezime() {
+        return $this->prezimeZap;
     }
 
     public function GetIdKor() {
@@ -43,16 +43,16 @@ class Admin {
         return $this->idProg;
     }
 
-    public function SetTrenId($idAdmin) {
-        $this->idAdmin = $idAdmin;
+    public function SetZapId($idZap) {
+        $this->idZap = $idZap;
     }
 
-    public function SetTrenIme($imeAdmin) {
-        $this->imeAdmin = $imeAdmin;
+    public function SetZapIme($imeZap) {
+        $this->imeZap = $imeZap;
     }
 
-    public function SetTrenPrezime($prezimeAdmin) {
-        $this->prezimeAdmin = $prezimeAdmin;
+    public function SetZapPrezime($prezimeZap) {
+        $this->prezimeZap = $prezimeZap;
     }
 
     public function SetIdKor($idKor) {
@@ -64,4 +64,3 @@ class Admin {
     }
 
 }
-include '../view/indexAdmin.php';

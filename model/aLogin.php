@@ -18,9 +18,9 @@ if ($r && $r->num_rows == 1) {
     $_SESSION['idKor'] = $row['idKor'];
 
     switch ($row['idKor']) {
-        case 3: header("Location: Admin.php");
+        case 3: header("Location: ../Admin/Administratori.php");
             break;
-        case 2: header("Location: Trener.php");
+        case 2: header("Location: ../Admin/Treneri.php");
             break;
         default: header("Location: ../index.php");
     }
