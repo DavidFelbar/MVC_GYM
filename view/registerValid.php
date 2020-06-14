@@ -9,5 +9,6 @@
         $SESSION['imeRegister']=$_POST['imeRegister'];
         $SESSION['prezimeRegister']=$_POST['prezimeRegister'];
         var_dump($SESSION);
+        
     }
 ?>
