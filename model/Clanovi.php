@@ -3,6 +3,8 @@
 class Clan {
 
     private $idClana;
+    private $usernameClana;
+    private $passwordClana;
     private $imeClana;
     private $prezimeClana;
     private $idProg;
@@ -18,6 +20,8 @@ class Clan {
             $row = $r->fetch_assoc();
             // POSTAVI VRIJEDNOSTI ATRIBUTA
             $this->idClana = $row['idClan'];
+            $this->usernameClana=$row['usernameClana'];
+            $this->passwordClana=$row['passwordClana'];
             $this->imeClana = $row['imeClana'];
             $this->prezimeClana = $row['prezimeClana'];
             $this->idProg = $row['idProg'];
@@ -29,6 +33,14 @@ class Clan {
 
     public function GetIdClana() {
         return $this->idClana;
+    }
+    
+    public function GetUsernameClana() {
+        return $this->usernameClana;
+    }
+    
+    public function GetPasswordClana() {
+        return $this->passwordClana;
     }
 
     public function GetClanIme() {
@@ -54,6 +66,13 @@ class Clan {
 
     public function SetIdClana($idClana) {
         $this->idClana = $idClana;
+    }
+    public function SetUsernameClana($usernameClana) {
+       $this->usernameClana=$usernameClana;
+    }
+    
+    public function SetPasswordClana($passwordClana) {
+       $this->passwordClana=$passwordClana;
     }
 
     public function SetClanIme($imeClana) {

@@ -10,12 +10,14 @@ class Clanovi {
         $this->db = DB::connect();
     }
 
-    public function dohvatiZaposlenike() {
-        $sql = "SELECT idClana,imeClana,prezimeClana,idProg,idClan FROM clanovi";
+    public function dohvatiClanove() {
+        $sql = "SELECT idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan FROM clanovi";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $cl = new Clan();
             $cl->GetIdClana($row['idClana']);
+            $cl->GetUsernameClana($row['usernameClana']);
+            $cl->GetPasswordClana($row['passwordClana']);
             $cl->GetClanIme($row['imeClana']);
             $cl>GetClanPrezime($row['prezimeClana']);
             $cl->GetIdProg($row['idProg']);
@@ -25,16 +27,16 @@ class Clanovi {
             $this->clanarina[] = $cl;
         }
 
-        return $this->zaposlenik;
+        return $this->Clan;
     }
 
-    public function brisiZaposlenike($idZap) {
-        $sql = "DELETE FROM zaposlenici WHERE id=$idZap LIMIT 1";
+    public function brisiClanove($idZap) {
+        $sql = "DELETE FROM clanovi WHERE id=$idZap LIMIT 1";
         $this->db->query($sql);
     }
 
-    public function unosZaposlenika($idZap,$imeZap,$prezimeZap,$idKor,$idProg) {
-        $sql = "INSERT INTO zaposlenici(idZap,imeZap,prezimeZap,idKor,idProg) VALUES ('$idZap,$imeZap,$prezimeZap,$idKor,$idProg')";
+    public function unosClanova($idZap,$usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
+        $sql = "INSERT INTO zaposlenici(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ('$idClana,$usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
         $this->db->query($sql);
     }
 
