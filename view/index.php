@@ -28,7 +28,7 @@
 
     <body>
         
-        <h1 class='uzglavlje'>MVC GYM  </h1> <h2 class='loginLink'><a href='login.php'>Login</a></h2>
+        <h1 class='uzglavlje'>MVC GYM  </h1> <h2 class='loginLinkAdmin'><a href='adminlogin.php'>Login zaposlenici</a></h2> <h2 class='loginLink'><a href='login.php'>Login clanovi</a></h2>
         
     </table>
     </body>

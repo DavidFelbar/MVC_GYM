@@ -8,11 +8,11 @@ class Clanarina {
     private $maxDolasci;
 
 
-    public function __construct($id = false) {
-        if ($id) {
-            $c = DB::connect();
+    public function __construct($idClan = false) {
+        if ($idClan) {
+            $db = DB::connect();
             $sql = "SELECT * FROM clanarina WHERE id = $id LIMIT 1";
-            $r = $c->query($sql);
+            $r = $db->query($sql);
             $row = $r->fetch_assoc();
             // POSTAVI VRIJEDNOSTI ATRIBUTA
             $this->idClan = $row['idClan'];
