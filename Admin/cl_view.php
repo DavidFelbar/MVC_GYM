@@ -72,7 +72,7 @@
     <hr>
 <?php } ?>
 
-=======
+
 <!-- ADMINISTRATOR - PREGLED -->
 ﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
 
@@ -146,4 +146,4 @@
     <hr>
 <?php } ?>
 
->>>>>>> THEIRS
+

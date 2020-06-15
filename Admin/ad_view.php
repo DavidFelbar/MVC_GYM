@@ -85,8 +85,8 @@
             echo '<td>' . $c->GetDolasci();
             echo '</td>';
             ?>
-            <td> <a href="?a=update&id=<?php echo $c->GetClanarId(); ?>">IZMJENI</a> </td>
-            <td> <a href="?a=delete&id=<?php echo $c->GetClanarId(); ?>">IZBRISI</a> </td>
+            <td> <a href="?a=updateClanarina&idClanarine=<?php echo $c->GetClanarId(); ?>&nazivClanarine=<?php echo $c->GetClanarNaziv();?>">IZMJENI</a> </td>
+            <td> <a href="?a=deleteClanarina&idClanarine=<?php echo $c->GetClanarId(); ?>">IZBRISI</a> </td>
         </tr>
 
 <?php } ?>
@@ -116,51 +116,4 @@
     <input type="submit" name="submit" value="Spremi">
 </form>
 
-<table border="1"> 
-    <h2> ČLANOVI: </h2>
-    <tr>
-        <th>IME</th>
-        <th>PREZIME</th>
-        <th>ČLANARINA</th>
-        <th>IZBRISI</th>
-    </tr>
-<?php foreach ($clan as $b) { ?>
 
-
-        <tr>
-            <?php
-            echo '<td>' . $b->GetClanIme();
-            echo '</td>';
-            echo '<td>' . $b->GetClanPrezime();
-            echo '</td>';
-            $id = $b->GetIdClanarine();
-
-
-            echo '<td>';
-            echo '</td>';
-            ?>
-            <td> <a href="?a=delete&id=<?php echo $b->GetIdClana(); ?>">IZBRISI</a> </td>
-        </tr>
-
-<?php } ?>
-</table>
-
-
-<h2> Unos novog člana:</h2>
-<form  method="post" action="?a=create">
-
-    <p>  Ime <input type="text" name="ime" >  </p>
-    <p>  Prezime <input type="text" name="prezime"> </p>
-    <p>  Username <input type="text" name="prezime"> </p>
-    <p>  Password<input type="text" name="prezime"> </p>
-    <p> ID Programa <input type="text" name="prezime"> </p>
-    <p> Dolasci <input type="text" name="prezime"> </p>
-   
-        <label for="clanarina">Tip članarine:</label>
-        <select name="clanarina" id="clanarina">
-
-        </select> 
-        <br>
-
-        <input type="submit" name="submit" value="Spremi">
-</form>

@@ -34,7 +34,7 @@ switch ($a) {
 
 
     case 'updateClanarina': if (!$_POST) {
-            $uc = new Clanarina($_GET['id']);
+            $uc = new Clanarina($_GET['idClanarine']);
             $template = 'ad_update';
         } else {
             $uc = new Clanarina();
@@ -48,7 +48,7 @@ switch ($a) {
         }
         break;
 
-    case 'deleteClanarina': $cl->brisiClanarine($_GET['id']);
+    case 'deleteClanarina': $cl->brisiClanarine($_GET['idClanarine']);
         header('Location: Administratori.php');
         break;
 

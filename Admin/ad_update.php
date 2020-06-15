@@ -3,7 +3,7 @@
 <h2> Izmjena članarine: </h2>
 ﻿<form method="post" action="?a=updateClanarina&id=<?php echo $uc->GetClanarId();?>">
     
-    <p>Naziv članarine: <input type="text" name="naziv" value="<?php echo $uc->GetClanarNaziv();?>"> </p>
+    <p>Naziv članarine: <input type="text" name="naziv" value="<?php echo $_GET['nazivClanarine'];?>"> </p>
          
     <p> Cijena članarine <input type="text" name="cijena"> </p>
         <p>Broj dolazaka:</p>
