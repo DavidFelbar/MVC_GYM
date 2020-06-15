@@ -34,8 +34,8 @@ class Clanovi {
         $this->db->query($sql);
     }
 
-    public function unosClanova($idClana,$usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
-        $sql = "INSERT INTO clanovi(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ('$idClana,$usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
+    public function unosClanova($usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
+        $sql = "INSERT INTO clanovi(usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ($usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
         $this->db->query($sql);
     }
 

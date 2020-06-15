@@ -4,7 +4,7 @@
 <?php foreach ($program as $p) { ?>
 
     <table border="1"> 
-        <h2> Izmjena "<?php echo $p->GetProgNaziv(); ?>" programa: </h2>
+                <h2> Izmjena "<?php echo $p->GetProgNaziv(); ?>" programa: </h2>
         <tr>
             <th>NAZIV PROGRAMA</th>
 
@@ -22,7 +22,7 @@
             echo '<td>' . $p->GetProgOcj();
             echo '</td>';
             ?>
-            <td> <a href="?a=update&id=<?php echo $p->GetProgId(); ?>">IZMJENI</a> </td>
+                        <td> <a href="?a=update&id=<?php echo $p->GetProgId(); ?>">IZMJENI</a> </td>
             <td> <a href="?a=delete&id=<?php echo $p->GetProgId(); ?>">IZBRISI</a> </td>
 
         </tr>
