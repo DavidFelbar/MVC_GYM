@@ -40,7 +40,7 @@ class Clanarine {
     }
 
     public function unosClanarine($nazivClan,$cijena,$maxDolasci) {
-        $sql = "INSERT INTO clanarina(idClan,nazivClan,cijena,dolasci) VALUES ('','$nazivClan',$cijena,$maxDolasci)";
+        $sql = "INSERT INTO clanarina(nazivClan,cijena,maxDolasci) VALUES('$nazivClan',$cijena,$maxDolasci)";
         $this->db->query($sql);
     }
 
