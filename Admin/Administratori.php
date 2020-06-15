@@ -51,8 +51,11 @@ switch($a)
 		   header('Location: Administratori.php');
 		   break;
                     
-                    
-				   
+
+    case 'createClan': $cl->unosClanarine($_POST['naziv'], $_POST['cijena'], $_POST['maxdolasci']);
+        header('Location: Administratori.php');
+        break;
+
     case 'updateClan': if(!$_POST){
 			$uc = new Clanarina($_GET['id']);
 			$template = 'ad_update';
@@ -69,7 +72,7 @@ switch($a)
                    }		
                    break;
 	
-    case 'delete': $cl->brisiClanarine($_GET['id']);
+    case 'deleteClan': $cl->brisiClanarine($_GET['id']);
         	   header('Location: Administratori.php'); 
 		   break;
 				   

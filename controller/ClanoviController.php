@@ -4,7 +4,7 @@ class Clanovi {
 
     private $db;
     private $Clan = array();
-
+    private $clan;
     public function __construct() {
         $this->db = DB::connect();
     }
