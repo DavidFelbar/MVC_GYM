@@ -8,7 +8,9 @@ require_once('../klase/DB.php');
 require_once('../klase/Pomocna.php');
 require_once('../model/Zaposlenik.php');
 require_once('../model/Clanarine.php');
+require_once('../model/Clanovi.php');
 require_once('../controller/ClanarineController.php');
+require_once('../controller/ClanoviController.php');
 
 // PROVJERI DA LI JE PRIJAVLJEN (LOGIRAN) I IMA LI ODGOVARAJUCU RAZINU PRIVILEGIJA
 //Korisnik::logiran(3);
@@ -18,6 +20,7 @@ if(!isset($_GET['a'])) { $a = ''; } else { $a = $_GET['a']; }
 
 // ADMINISTRATOR RADI CRUD NAD KATEGOIJAMA - INSTANCIRAMO KATEGORIJE MANAGER
 $cl = new Clanarine();
+$cla = new Clanovi();
 
 // GLAVNI SWITCH
 switch($a) 
@@ -45,11 +48,13 @@ switch($a)
                    break;
 	
     case 'delete': $cl->brisiClanarine($_GET['id']);
+                   $cla->brisiClanove($_POST[])
         	   header('Location: Administratori.php'); 
 		   break;
 				   
     default : 	   
                    $clanarine = $cl->dohvatiClanarine();
+                   $clan=$cla->dohvatiClanove();
 		   $template = 'ad_view'; 	  
 }
 

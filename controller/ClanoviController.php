@@ -10,7 +10,7 @@ class Clanovi {
     }
 
     public function dohvatiClanove() {
-        $sql = "SELECT idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan FROM clanovi";
+        $sql = "SELECT idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor FROM clanovi";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $cl = new Clan();
@@ -18,7 +18,7 @@ class Clanovi {
             $cl->GetUsernameClana($row['usernameClana']);
             $cl->GetPasswordClana($row['passwordClana']);
             $cl->GetClanIme($row['imeClana']);
-            $cl>GetClanPrezime($row['prezimeClana']);
+            $cl->GetClanPrezime($row['prezimeClana']);
             $cl->GetIdProg($row['idProg']);
             $cl->GetIdClanarine($row['idClan']);
             $cl->GetClanDolasci($row['dolasci']);
@@ -30,12 +30,12 @@ class Clanovi {
     }
 
     public function brisiClanove($idClana) {
-        $sql = "DELETE FROM clanovi WHERE id=$idZap LIMIT 1";
+        $sql = "DELETE FROM clanovi WHERE id=$idClana LIMIT 1";
         $this->db->query($sql);
     }
 
     public function unosClanova($idClana,$usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
-        $sql = "INSERT INTO zaposlenici(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ('$idClana,$usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
+        $sql = "INSERT INTO clanovi(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ('$idClana,$usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
         $this->db->query($sql);
     }
 

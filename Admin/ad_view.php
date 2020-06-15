@@ -1,5 +1,4 @@
-<!-- ADMINISTRATOR - PREGLED -->
-﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
+
  <table border="1"> 
      <h2> Izmjena članarina: </h2>
      <tr>
@@ -27,7 +26,7 @@
 <?php } ?>
  </table>
 <hr>
-    <html>
+ 
         <h2> Unos nove članarine:</h2>
     <form  method="post" action="?a=create">
        
@@ -50,4 +49,28 @@
         
         <input type="submit" name="submit" value="Spremi">
     </form>
-</html>
+
+ <table border="1"> 
+     <h2> ČLANOVI: </h2>
+     <tr>
+         <th>IME</th>
+         <th>PREZIME</th>
+         <th>MAKSIMALAN BROJ DOLAZAKA</th>
+          <th>IZBRISI</th>
+     </tr>
+    <?php foreach ($clan as $b) { ?>
+
+
+    <tr>
+    <?php echo '<td>'.$b->GetClanIme();
+                    echo '</td>';
+          echo '<td>'.$b->GetClanPrezime();
+          echo '</td>';
+          echo '<td>'.$b->GetClanDolasci();
+          echo '</td>';
+    ?>
+        <td> <a href="?a=delete&id=<?php echo $b->GetIdClana(); ?>">IZBRISI</a> </td>
+ </tr>
+
+<?php } ?>
+ 
