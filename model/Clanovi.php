@@ -15,17 +15,17 @@ class Clan {
     public function __construct($idClana = false) {
         if ($idClana) {
             $db = DB::connect();
-            $sql = "SELECT * FROM clanovi WHERE id = $idClana LIMIT 1";
+            $sql = "SELECT * FROM clanovi WHERE idClana = $idClana LIMIT 1";
             $r = $db->query($sql);
             $row = $r->fetch_assoc();
             // POSTAVI VRIJEDNOSTI ATRIBUTA
-            $this->idClana = $row['idClan'];
+            $this->idClana = $row['idClana'];
             $this->usernameClana=$row['usernameClana'];
             $this->passwordClana=$row['passwordClana'];
             $this->imeClana = $row['imeClana'];
             $this->prezimeClana = $row['prezimeClana'];
             $this->idProg = $row['idProg'];
-            $this->idClanarine = $row['idClanarine'];
+            $this->idClanarine = $row['idClan'];
             $this->dolasci = $row['dolasci'];
             $this->idKor = $row['idKor'];
         }

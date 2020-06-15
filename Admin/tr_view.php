@@ -22,7 +22,7 @@
             echo '<td>' . $p->GetProgOcj();
             echo '</td>';
             ?>
-            <td> <a href="?a=update&id=<?php echo $p->GetProgId(); ?>">IZMJENI</a> </td>
+                        <td> <a href="?a=update&id=<?php echo $p->GetProgId(); ?>">IZMJENI</a> </td>
             <td> <a href="?a=delete&id=<?php echo $p->GetProgId(); ?>">IZBRISI</a> </td>
 
         </tr>

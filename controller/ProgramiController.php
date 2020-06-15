@@ -9,9 +9,41 @@ class Programi {
     public function __construct() {
         $this->db = DB::connect();
     }
+    public function dohvatiSvePrograme() {
+        $sql = "SELECT idProg, nazivProg,opisProg,tipProg,ocjena,idTren FROM programi ORDER BY idTren";
+        $r = $this->db->query($sql);
+        while ($row = $r->fetch_assoc()) {
+            $p = new Program();
+            $p->SetProgId($row['idProg']);
+            $p->SetProgNaziv($row['nazivProg']);
+            $p->SetProgOpis($row['opisProg']);
+            $p->SetProgTip($row['tipProg']);
+            $p->SetProgOcj($row['ocjena']);
+            $p->SetIdTren($row['idTren']);
+            $this->programi[] = $p;
+        }
+
+        return $this->programi;
+    }
 
     public function dohvatiPrograme($idTren) {
         $sql = "SELECT idProg, nazivProg,opisProg,tipProg,ocjena,idTren FROM programi where idTren=$idTren";
+        $r = $this->db->query($sql);
+        while ($row = $r->fetch_assoc()) {
+            $p = new Program();
+            $p->SetProgId($row['idProg']);
+            $p->SetProgNaziv($row['nazivProg']);
+            $p->SetProgOpis($row['opisProg']);
+            $p->SetProgTip($row['tipProg']);
+            $p->SetProgOcj($row['ocjena']);
+            $p->SetIdTren($row['idTren']);
+            $this->programi[] = $p;
+        }
+
+        return $this->programi;
+    }
+      public function dohvatiProgram($idProg) {
+        $sql = "SELECT idProg, idTren,nazivProg,opisProg,tipProg,ocjena FROM programi where idProg=$idProg";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
