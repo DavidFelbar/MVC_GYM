@@ -10,7 +10,7 @@ class Zaposlenici {
     }
 
     public function dohvatiZaposlenika($idProg) {
-        $sql = "SELECT idZap,imeZap,prezimeZap,idKor,idProg FROM zaposlenici WHERE idProg=$idProg";
+        $sql = "SELECT idZap,imeZap,prezimeZap,idKor,idProg FROM zaposlenici WHERE idProg=$idProg AND idKor<3";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $z = new Zaposlenik();
