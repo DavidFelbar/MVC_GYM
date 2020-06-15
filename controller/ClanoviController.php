@@ -29,13 +29,13 @@ class Clanovi {
         return $this->Clan;
     }
 
-    public function brisiClanove($idClana) {
-        $sql = "DELETE FROM clanovi WHERE id=$idZap LIMIT 1";
+    public function brisiClana($idClana) {
+        $sql = "DELETE FROM clanovi WHERE idClana=$idClana LIMIT 1";
         $this->db->query($sql);
     }
 
     public function unosClanova($usernameClana,$passwordClana,$imeClana,$prezimeClana,$idClanarine,$dolasci) {
-        $sql = "INSERT INTO clanovi(usernameClana,passwordClana,imeClana,prezimeClana,idClan,dolasci) VALUES ('$usernameClana','$passwordClana','$imeClana','$prezimeClana',$idClan,$dolasci)";
+        $sql = "INSERT INTO clanovi(usernameClana,passwordClana,imeClana,prezimeClana,idClan,dolasci) VALUES ('$usernameClana','$passwordClana','$imeClana','$prezimeClana',$idClanarine,$dolasci)";
         $this->db->query($sql);
     }
 

@@ -28,8 +28,8 @@
             echo '</td>';
 
             ?>
-            <td> <a href="?a=dolazakClan&id=<?php echo $cln->GetIdClana(); ?>">DOLAZAK</a> </td>
-            <td> <a href="?a=deleteClan&id=<?php echo $cln->GetIdClana(); ?>">IZBRISI</a> </td>
+            <td> <a href="?a=dolazakClan&idClana=<?php echo $cln->GetIdClana(); ?>">DOLAZAK</a> </td>
+            <td> <a href="?a=deleteClan&idClana=<?php echo $cln->GetIdClana(); ?>">IZBRISI</a> </td>
         </tr>
 
 <?php } ?>
@@ -37,27 +37,30 @@
 <hr>
 <html>
     <h2> Unos novog člana:</h2>
-    <form  method="post" action="?a=createClan ">
-
+    <form  method="post" action="?a=createClan">
 
         <p>  Ime člana <input type="text" name="imeClana" >  </p>
         <p>  Prezime člana <input type="text" name="prezimeClana"> </p>
         <p>  Korisničko člana <input type="text" name="usernameClana" >  </p>
         <p>  Lozinka člana <input type="text" name="passwordClana"> </p>
         <p> Odabir članarine za novog člana </p>
-        <select name="clanarina">
+        <select  name="clanarina" id="clanarina">
          <?php
-         foreach ($clanarine as $c) {
-            echo '<option value="'.$c->GetClanarNaziv().'">'.$c->GetClanarNaziv();
-         
-            $_SESSION['idClanarine']=$c->GetClanarId();
-            $_SESSION['dolasci']=$c->GetDolasci();
-        
+         foreach ($clanarine as $test) {
+            $naziv=$test->GetClanarNaziv();
+            $idClanarine=$test->GetClanarId();
+            $dolasci=$test->GetDolasci();
+            echo '<option value="'.$idClanarine.','.$dolasci.'">'.$naziv.'</option>';
+           
             
          }
+        
+           // echo '<input type="hidden" name="idClanarine" value="'. $test->GetClanarId().'">';
+        //    echo '<input type="hidden" name="dolasci" value="'. $test->GetDolasci().'">';
             ?>
         </select>
         <input type="submit" name="submit" value="Spremi">
+        
     </form>
 </html>
 
