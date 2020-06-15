@@ -17,9 +17,11 @@ require_once ('./model/Program.php');
 require_once('./klase/Pomocna.php');
 require_once('./klase/DB.php');
  $db=DB::connect();
- 
- //$programi=Pomocna::GetProgrami($_SESSION['idTren']);
- //$clanarine=Pomocna::GetClanarine();
+ if(isset($_SESSION['idZap']))
+ {
+ $programi=Pomocna::GetProgrami($_SESSION['idZap']);
+ }
+ $clanarine=Pomocna::GetClanarine();
  
  include 'view/index.php';
 ?>

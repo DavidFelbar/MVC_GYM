@@ -1,12 +1,14 @@
-<html>
-<head>
-    <!-- ADMINISTRATOR - INDEX -->
-    <title>ČLAN</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    </head>
+<?php
+include('../klase/DB.php');
+include('../klase/Pomocna.php');
+include ('../model/Program.php');
+include('../controller/ProgramiController.php');
+include ('../model/Clanarine.php');
+include('../controller/ClanarineController.php');
+include '../controller/ClanoviController.php';
 
-    <body>
-        <p align="right"><?php echo '<b>'. $_SESSION['login'].'<b>';?><br/><a href="../model/logout.php">ODJAVA</a></p>
-    <?php include("$template.php"); ?>
-    </body>
+echo 'ja sam clan';
+?>
+<html>
+<p align="right"><a href="../model/logout.php">ODJAVA</a></p>
 </html>

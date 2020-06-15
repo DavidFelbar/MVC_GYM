@@ -9,22 +9,6 @@ class Zaposlenici {
         $this->db = DB::connect();
     }
 
-    public function dohvatiZaposlenika($idProg) {
-        $sql = "SELECT idZap,imeZap,prezimeZap,idKor,idProg FROM zaposlenici WHERE idProg=$idProg AND idKor<3";
-        $r = $this->db->query($sql);
-        while ($row = $r->fetch_assoc()) {
-            $z = new Zaposlenik();
-            $z->GetZapId($row['idZap']);
-            $z->GetZapIme($row['imeZap']);
-            $z->GetZapPrezime($row['prezimeZap']);
-            $z->GetIdKor($row['idKor']);
-            $z->GetIdProg($row['idProg']);
-            $this->zaposlenik[] = $z;
-        }
-
-        return $this->zaposlenik;
-    }
-
     public function dohvatiZaposlenike() {
         $sql = "SELECT idZap,imeZap,prezimeZap,idKor,idProg FROM zaposlenici";
         $r = $this->db->query($sql);
@@ -46,7 +30,7 @@ class Zaposlenici {
         $this->db->query($sql);
     }
 
-    public function unosZaposlenika($idZap, $imeZap, $prezimeZap, $idKor, $idProg) {
+    public function unosZaposlenika($idZap,$imeZap,$prezimeZap,$idKor,$idProg) {
         $sql = "INSERT INTO zaposlenici(idZap,imeZap,prezimeZap,idKor,idProg) VALUES ('$idZap,$imeZap,$prezimeZap,$idKor,$idProg')";
         $this->db->query($sql);
     }
