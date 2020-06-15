@@ -1,6 +1,7 @@
 <!-- ADMINISTRATOR - PREGLED -->
 ﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
  <table border="1"> 
+     <h2> Izmjena članarina: </h2>
      <tr>
          <th>NAZIV CLANARINE</th>
          <th>CIJENA CLANARINE</th>
@@ -25,16 +26,17 @@
 
 <?php } ?>
  </table>
+<hr>
     <html>
-    
+        <h2> Unos nove članarine:</h2>
     <form  method="post" action="?a=create">
        
         
-        <input type="text" name="naziv" >
+    <p>  Naziv članarine <input type="text" name="naziv" >  </p>
     
 
       
-            <input type="text" name="cijena">
+        <p>  Cijena članarine <input type="text" name="cijena">
      
        
         <p>Broj dolazaka:</p>
@@ -44,7 +46,7 @@
         <label for="tri">13 dolazaka - Tri puta tjedno</label><br>
         <input type="radio"  value="99" id="nolimit" name="maxdolasci">
         <label for="nolimit">Neograničeno dolazaka - No limit</label><br>
-
+        <br>
         
         <input type="submit" name="submit" value="Spremi">
     </form>

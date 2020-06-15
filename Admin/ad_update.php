@@ -1,9 +1,11 @@
 <!-- ADMINISTRATOR - UPDATE -->
 <!-- OBRAZAC ZA IZMJENU NAZIVA KATEGORIJE -->
+<h2> Izmjena članarine: </h2>
 ﻿<form method="post" action="?a=update&id=<?php echo $uc->GetClanarId();?>">
-    <input type="text" name="naziv" value="<?php echo $uc->GetClanarNaziv();?>">
+    
+    <p>Naziv članarine: <input type="text" name="naziv" value="<?php echo $uc->GetClanarNaziv();?>"> </p>
          
-        <input type="text" name="cijena">
+    <p> Cijena članarine <input type="text" name="cijena"> </p>
         <p>Broj dolazaka:</p>
         <input type="radio" name="maxdolasci" id="dva" value="9"  >
         <label for="dva">9 dolazaka - Dva puta tjedno</label><br>
