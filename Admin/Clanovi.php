@@ -15,7 +15,7 @@ if(!isset($_GET['a'])) { $a = ''; } else { $a = $_GET['a']; }
 $pr = new Programi();
 $pp = new Programi();
 $cl = new Clanovi();
-$z = new Zaposlenici();
+$zp = new Zaposlenici();
 
 
 switch($a) 
@@ -44,7 +44,7 @@ switch($a)
     default :
         $program = $pp->dohvatiProgram($_SESSION['idProg']);
         $programi = $pr->dohvatiSvePrograme();
-        $zaposlenik = $z->dohvatiZaposlenika($_SESSION['idProg']);
+        $zaposlenik = $zp->dohvatiZaposlenika($_SESSION['idProg']);
         $template = 'cl_view';
 }
 include './indexClanovi.php';

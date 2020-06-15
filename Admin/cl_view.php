@@ -36,11 +36,11 @@
 <?php } ?>
   <h2> ODABIR PROGRAMA</h2>
 <?php foreach ($programi as $pr) { ?>
-    
+   
     <table border="1"> 
        <h3> "<?php echo $pr->GetProgNaziv();?>"</h3>
            <tr>
-            <th>"<?php foreach ($zaposlenik as $z) { echo $z->GetZapIme();}?>"</th>
+            <th>"<?php foreach ($zaposlenik as $zp){echo $zp->GetZapIme();}?>"</th>
 
         </tr>
        <tr>
