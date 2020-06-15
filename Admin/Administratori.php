@@ -38,6 +38,7 @@ switch($a)
                        $uc->SetClanarNaziv($_POST['naziv']);
                        $uc->SetClanarCijena($_POST['cijena']);
                        $uc->SetDolasci($_POST['maxdolasci']);
+                       
                        $cl->izmjeniClanarine($uc);
                        header('Location: Administratori.php'); 
                    }		

@@ -5,7 +5,7 @@ class Clanarine {
 
     private $db;
     private $clanarine = array();
-    private $Clanarina;
+    private $clanarina;
     public function __construct() {
         $this->db = DB::connect();
     }
@@ -26,12 +26,12 @@ class Clanarine {
         return $this->clanarine;
     }
 
-    public function izmjeniClanarine($Clanarina){
-		$id = $Clanarina->GetClanarId();
-		$naziv = $Clanarina->GetClanarNaziv();
-                $cijena=$Clanarina->GetClanarCijena();
-                $dolasci=$Clanarina->GetDolasci();
-		$sql = "UPDATE clanarina SET nazivClan='$naziv',cijena='$cijena',maxDolasci='$dolasci' WHERE id='$id';";
+    public function izmjeniClanarine($clanarina){
+		$id = $clanarina->GetClanarId();
+		$naziv = $clanarina->GetClanarNaziv();
+                $cijena=$clanarina->GetClanarCijena();
+                $dolasci=$clanarina->GetDolasci();
+		$sql = "UPDATE clanarina SET nazivClan='$naziv', cijena=$cijena, maxDolasci=$dolasci WHERE idClan=$id";
 		$this->db->query($sql);
 	}
     public function brisiClanarine($idClan) {

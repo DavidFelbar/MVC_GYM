@@ -1,11 +1,30 @@
 <!-- ADMINISTRATOR - PREGLED -->
 ﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
+ <table border="1"> 
+     <tr>
+         <th>NAZIV CLANARINE</th>
+         <th>CIJENA CLANARINE</th>
+         <th>MAKSIMALAN BROJ DOLAZAKA</th>
+          <th>IZMJENI</th>
+          <th>IZBRISI</th>
+     </tr>
 <?php foreach ($clanarine as $c) { ?>
-    <p><?php echo $c->GetClanarNaziv(); ?>
-        - <a href="?a=update&id=<?php echo $c->GetClanarId(); ?>">IZMJENI</a>
-        - <a href="?a=delete&id=<?php echo $c->GetClanarId(); ?>">IZBRISI</a>
-    </p>
+
+
+    <tr>
+    <?php echo '<td>'.$c->GetClanarNaziv();
+                    echo '</td>';
+          echo '<td>'.$c->GetClanarCijena();
+          echo '</td>';
+          echo '<td>'.$c->GetDolasci();
+          echo '</td>';
+    ?>
+        <td> <a href="?a=update&id=<?php echo $c->GetClanarId(); ?>">IZMJENI</a> </td>
+        <td> <a href="?a=delete&id=<?php echo $c->GetClanarId(); ?>">IZBRISI</a> </td>
+ </tr>
+
 <?php } ?>
+ </table>
     <html>
     
     <form  method="post" action="?a=create">
