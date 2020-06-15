@@ -43,7 +43,7 @@ class Programi {
         return $this->programi;
     }
       public function dohvatiProgram($idProg) {
-        $sql = "SELECT idProg, idTren,nazivProg,opisProg,tipProg,ocjena FROM programi where idProg=$idProg";
+        $sql = "SELECT idProg,nazivProg,opisProg,tipProg,idTren,ocjena FROM programi WHERE idProg=$idProg";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $p = new Program();

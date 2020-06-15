@@ -19,6 +19,7 @@ if ($r && $r->num_rows == 1) {
     $_SESSION['idProg'] = $row['idProg'];
     $_SESSION['idClana'] = $row['idClana'];
     
+    
     header("Location: ../Admin/Clanovi.php");
 } else {
     header("Location: ../index.php");

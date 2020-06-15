@@ -18,6 +18,7 @@ $cl = new Clanovi();
 $zp = new Zaposlenici();
 
 
+
 switch($a) 
 
 {
@@ -44,7 +45,7 @@ switch($a)
     default :
         $program = $pp->dohvatiProgram($_SESSION['idProg']);
         $programi = $pr->dohvatiSvePrograme();
-        $zaposlenik = $zp->dohvatiZaposlenika($_SESSION['idProg']);
+        $zaposlenik = $zp->dohvatiZaposlenike();
         $template = 'cl_view';
 }
 include './indexClanovi.php';
