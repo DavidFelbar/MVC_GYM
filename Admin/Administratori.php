@@ -22,8 +22,10 @@ $cl = new Clanarine();
 // GLAVNI SWITCH
 switch($a) 
 {
-    case 'create': 
-                   $cl->unosClanarine('tri puta',280,8); 
+    case 'create': $naziv=$_POST['naziv'];
+                    $cijena=$_POST['naziv'];
+                    $dolasci=$_POST['naziv'];
+                   $cl->unosClanarine(1,$naziv,$cijena,$dolasci); 
 		   header('Location: Administratori.php');
 		   break;
                     
