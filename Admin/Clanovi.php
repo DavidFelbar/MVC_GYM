@@ -43,9 +43,11 @@ switch($a)
 
 
     default :
-        $program = $pp->dohvatiProgram($_SESSION['idProg']);
+        
+       $program = $pp->dohvatiProgram($_SESSION['idProg']);
         $programi = $pr->dohvatiSvePrograme();
-        $zaposlenik = $zp->dohvatiZaposlenike();
+        $zaposlenik = $zp->dohvatiZaposlenika($_SESSION['idProg']);
+       
         $template = 'cl_view';
 }
 include './indexClanovi.php';

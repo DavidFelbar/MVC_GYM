@@ -6,11 +6,12 @@ class Programi {
     private $db;
     private $programi = array();
     private $program;
+     private $sviprogram=array();
     public function __construct() {
         $this->db = DB::connect();
     }
     public function dohvatiSvePrograme() {
-        $sql = "SELECT idProg,nazivProg,opisProg,tipProg,ocjena,idTren FROM programi ORDER BY idTren";
+        $sql = "SELECT idProg,nazivProg,opisProg,tipProg,ocjena,idTren FROM programi";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
@@ -20,10 +21,10 @@ class Programi {
             $p->SetProgTip($row['tipProg']);
             $p->SetProgOcj($row['ocjena']);
             $p->SetIdTren($row['idTren']);
-            $this->programi[] = $p;
+            $this->sviprogram[] = $p;
         }
 
-        return $this->programi;
+        return $this->sviprogram;
     }
 
     public function dohvatiPrograme($idTren) {
@@ -43,7 +44,7 @@ class Programi {
         return $this->programi;
     }
       public function dohvatiProgram($idProg) {
-        $sql = "SELECT idProg,nazivProg,opisProg,tipProg,idTren,ocjena FROM programi WHERE idProg=$idProg";
+        $sql = "SELECT idProg, idTren,nazivProg,opisProg,tipProg,ocjena FROM programi where idProg='$idProg'";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
