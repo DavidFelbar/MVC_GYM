@@ -10,19 +10,19 @@ class Clanovi {
     }
 
     public function dohvatiClanove() {
-        $sql = "SELECT idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan FROM clanovi";
+        $sql = "SELECT idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor FROM clanovi";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $cl = new Clan();
-            $cl->GetIdClana($row['idClana']);
-            $cl->GetUsernameClana($row['usernameClana']);
-            $cl->GetPasswordClana($row['passwordClana']);
-            $cl->GetClanIme($row['imeClana']);
-            $cl>GetClanPrezime($row['prezimeClana']);
-            $cl->GetIdProg($row['idProg']);
-            $cl->GetIdClanarine($row['idClan']);
-            $cl->GetClanDolasci($row['dolasci']);
-            $cl->GetIdKor($row['idKor']);
+            $cl->SetIdClana($row['idClana']);
+            $cl->SetUsernameClana($row['usernameClana']);
+            $cl->SetPasswordClana($row['passwordClana']);
+            $cl->SetClanIme($row['imeClana']);
+            $cl->SetClanPrezime($row['prezimeClana']);
+            $cl->SetIdProg($row['idProg']);
+            $cl->SetIdClanarine($row['idClan']);
+            $cl->SetClanDolasci($row['dolasci']);
+            $cl->SetIdKor($row['idKor']);
             $this->Clan[] = $cl;
         }
 
@@ -34,8 +34,8 @@ class Clanovi {
         $this->db->query($sql);
     }
 
-    public function unosClanova($idClana,$usernameClana,$passwordClana,$imeZap,$prezimeZap,$idProg,$idClanarine,$dolasci,$idKor) {
-        $sql = "INSERT INTO zaposlenici(idClana,usernameClana,passwordClana,imeClana,prezimeClana,idProg,idClan,dolasci,idKor) VALUES ('$idClana,$usernameClana,$passwordClana,$imeClana,$prezimeClana,$idProg,$idClan',$dolasci,$idKor)";
+    public function unosClanova($usernameClana,$passwordClana,$imeClana,$prezimeClana,$idClanarine,$dolasci) {
+        $sql = "INSERT INTO clanovi(usernameClana,passwordClana,imeClana,prezimeClana,idClan,dolasci) VALUES ('$usernameClana','$passwordClana','$imeClana','$prezimeClana',$idClan,$dolasci)";
         $this->db->query($sql);
     }
 

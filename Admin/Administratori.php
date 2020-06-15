@@ -7,6 +7,9 @@ session_start();
 require_once('../klase/DB.php');
 require_once('../klase/Pomocna.php');
 require_once('../model/Zaposlenik.php');
+require_once('../model/Clanovi.php');
+require_once('../controller/ClanoviController.php');
+
 require_once('../model/Clanarine.php');
 require_once('../controller/ClanarineController.php');
 
@@ -18,7 +21,7 @@ if(!isset($_GET['a'])) { $a = ''; } else { $a = $_GET['a']; }
 
 // ADMINISTRATOR RADI CRUD NAD KATEGOIJAMA - INSTANCIRAMO KATEGORIJE MANAGER
 $cl = new Clanarine();
-
+$cc= new Clanovi();
 // GLAVNI SWITCH
 switch($a) 
 {
@@ -52,7 +55,8 @@ switch($a)
 		   break;
                     
 
-    case 'createClan': $cl->unosClanarine($_POST['naziv'], $_POST['cijena'], $_POST['maxdolasci']);
+    case 'createClan': 
+        $cc->unosClanova($_POST['usernameClana'],  $_POST['passwordClana'],$_POST['imeClana'], $_POST['prezimeClana'],$_SESSION['idClanarine'],$_SESSION['dolasci']);
         header('Location: Administratori.php');
         break;
 
@@ -76,8 +80,9 @@ switch($a)
         	   header('Location: Administratori.php'); 
 		   break;
 				   
-    default : 	   
+    default : 	   $clan=$cc->dohvatiClanove();
                     $clanarine = $cl->dohvatiClanarine();
+                    
 		   $template = 'ad_view'; 	  
 }
 

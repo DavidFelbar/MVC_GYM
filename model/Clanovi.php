@@ -15,7 +15,7 @@ class Clan {
     public function __construct($idClana = false) {
         if ($idClana) {
             $db = DB::connect();
-            $sql = "SELECT * FROM clanovi WHERE id = $id LIMIT 1";
+            $sql = "SELECT * FROM clanovi WHERE id = $idClana LIMIT 1";
             $r = $db->query($sql);
             $row = $r->fetch_assoc();
             // POSTAVI VRIJEDNOSTI ATRIBUTA

@@ -1,4 +1,5 @@
 <!--IZMJENA I UNOS CLANOVA-->
+
 <table border="1"> 
     <h2> ČLANOVI: </h2>
     <tr>
@@ -39,22 +40,23 @@
     <form  method="post" action="?a=createClan ">
 
 
-        <p>  Naziv člana <input type="text" name="nazivClana" >  </p>
-
-
-
-        <p>  Cijena člana <input type="text" name="cijena">
-
-
-        <p>Broj dolazaka:</p>
-        <input type="radio" id="dva" value="9" name="maxdolasci" >
-        <label for="dva">9 dolazaka - Dva puta tjedno</label><br>
-        <input type="radio" id="tri"  value="13" name="maxdolasci">
-        <label for="tri">13 dolazaka - Tri puta tjedno</label><br>
-        <input type="radio"  value="99" id="nolimit" name="maxdolasci">
-        <label for="nolimit">Neograničeno dolazaka - No limit</label><br>
-        <br>
-
+        <p>  Ime člana <input type="text" name="imeClana" >  </p>
+        <p>  Prezime člana <input type="text" name="prezimeClana"> </p>
+        <p>  Korisničko člana <input type="text" name="usernameClana" >  </p>
+        <p>  Lozinka člana <input type="text" name="passwordClana"> </p>
+        <p> Odabir članarine za novog člana </p>
+        <select name="clanarina">
+         <?php
+         foreach ($clanarine as $c) {
+            echo '<option value="'.$c->GetClanarNaziv().'">'.$c->GetClanarNaziv();
+         
+            $_SESSION['idClanarine']=$c->GetClanarId();
+            $_SESSION['dolasci']=$c->GetDolasci();
+        
+            
+         }
+            ?>
+        </select>
         <input type="submit" name="submit" value="Spremi">
     </form>
 </html>
