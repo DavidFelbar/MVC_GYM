@@ -11,12 +11,12 @@ class Programi {
     }
 
     public function dohvatiPrograme($idTren) {
-        $sql = "SELECT idProg, idTren,nazivProg,opisProg,tipProg,ocjena FROM programi where idTren=$idTren";
+        $sql = "SELECT idProg, nazivProg,opisProg,tipProg,ocjena,idTren FROM programi where idTren=$idTren";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
             $p->SetProgId($row['idProg']);
-            $p->GetProgNaziv($row['nazivProg']);
+            $p->SetProgNaziv($row['nazivProg']);
             $p->SetProgOpis($row['opisProg']);
             $p->SetProgTip($row['tipProg']);
             $p->SetProgOcj($row['ocjena']);

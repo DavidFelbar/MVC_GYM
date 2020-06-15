@@ -2,12 +2,11 @@
 ﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
 
 <?php foreach ($program as $p) { ?>
-
+    
     <table border="1"> 
-        <h2> Izmjena "<?php echo $p->GetProgNaziv(); ?>" programa: </h2>
+        <h2> Izmjena "<?php echo $p->GetProgNaziv();?>" programa: </h2>
         <tr>
             <th>NAZIV PROGRAMA</th>
-
             <th>TIP PROGRAMA</th>
             <th>OCJENA</th>
             <th>IZMJENI</th>
@@ -15,6 +14,7 @@
         </tr>
         <tr>
             <?php
+           
             echo '<td>' . $p->GetProgNaziv();
             echo '</td>';
             echo '<td>' . $p->GetProgTip();
