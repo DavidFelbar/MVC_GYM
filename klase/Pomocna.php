@@ -2,10 +2,10 @@
 
 class Pomocna {
 
-    public static function GetProgrami() {
+    public static function GetProgrami($idTren) {
         global $db;
         $programi = array();
-        $r = $db->query("SELECT * FROM programi");
+        $r = $db->query("SELECT * FROM programi where idTren=$idTren");
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
             $p->SetProgId($row['idProg']);

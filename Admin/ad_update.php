@@ -13,5 +13,6 @@
         <label for="tri">13 dolazaka - Tri puta tjedno</label><br>
         <input type="radio" name="maxdolasci"  value="99" id="nolimit" >
         <label for="nolimit">Neograničeno dolazaka - No limit</label><br>
+        <br>
         <input type="submit" name="submit" value="Spremi">
 </form>
