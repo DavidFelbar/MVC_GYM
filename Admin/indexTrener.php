@@ -11,3 +11,7 @@ include '../model/Clanovi.php';
 include '../controller/ClanoviController.php';
 */
 echo 'ja sam trener';
+?>
+<html>
+<p align="right"><a href="../model/logout.php">ODJAVA</a></p>
+</html>

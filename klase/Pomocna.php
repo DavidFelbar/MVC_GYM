@@ -27,7 +27,7 @@ class Pomocna {
             $c->SetClanarId($row['idClan']);
             $c->SetClanarNaziv($row['nazivClan']);
             $c->SetClanarCijena($row['cijena']);
-            $c->SetClanarDolasci($row['maxDolasci']);
+            $c->SetDolasci($row['maxDolasci']);
             
             $clanarine[] = $c;
         }

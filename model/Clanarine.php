@@ -49,7 +49,7 @@ class Clanarina {
     public function  SetClanarCijena($cijena) {
          $this->cijena=$cijena;
     }
-    public function  SetClanarDolasci($maxDolasci) {
+    public function  SetDolasci($maxDolasci) {
          $this->maxDolasci=$maxDolasci;
     }
    

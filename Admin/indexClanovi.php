@@ -8,3 +8,7 @@ include('../controller/ClanarineController.php');
 include '../controller/ClanoviController.php';
 
 echo 'ja sam clan';
+?>
+<html>
+<p align="right"><a href="../model/logout.php">ODJAVA</a></p>
+</html>

@@ -1,13 +1,12 @@
-<?php
+<html>
+<head>
+    <!-- ADMINISTRATOR - INDEX -->
+    <title>ADMINISTRATOR</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
 
-include('../klase/DB.php');
-include('../klase/Pomocna.php');
-/*
-include ('../model/Program.php');
-include('../controller/ProgramiController.php');
-include ('../model/Clanarine.php');
-include('../controller/ClanarineController.php');
-include '../model/Clanovi.php';
-include '../controller/ClanoviController.php';
-*/
-echo 'ja sam admin';
+    <body>
+        <p align="right"><a href="../model/logout.php">ODJAVA</a></p>
+    <?php include("$template.php"); ?>
+    </body>
+</html>

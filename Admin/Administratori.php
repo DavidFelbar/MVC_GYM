@@ -4,11 +4,11 @@
 session_start();
 
 // UKLJUCI POTREBNE DATOTEKE
-require_once('../pomocne/Db.php');
-require_once('../klase/Pomocne.php');
-require_once('../models/Zaposlenik.php');
-require_once('../models/Clanarine.php');
-require_once('../controllers/ClanarineController.php');
+require_once('../klase/DB.php');
+require_once('../klase/Pomocna.php');
+require_once('../model/Zaposlenik.php');
+require_once('../model/Clanarine.php');
+require_once('../controller/ClanarineController.php');
 
 // PROVJERI DA LI JE PRIJAVLJEN (LOGIRAN) I IMA LI ODGOVARAJUCU RAZINU PRIVILEGIJA
 //Korisnik::logiran(3);
@@ -22,31 +22,35 @@ $cl = new Clanarine();
 // GLAVNI SWITCH
 switch($a) 
 {
-    case 'create': $cl->unosClanarine($_POST['naziv']); 
-		   header('Location: administratori.php');
+    case 'create': 
+                   $cl->unosClanarine('tri puta',280,8); 
+		   header('Location: Administratori.php');
 		   break;
+                    
+                    
 				   
     case 'update': if(!$_POST){
-			$k = new Kategorija($_GET['id']);
+			$uc = new Clanarina($_GET['id']);
 			$template = 'ad_update';
                    }
                    else{
-                       $k = new Kategorija();
-                       $k->setId($_GET['id']);
-                       $k->setNaziv($_POST['naziv']);
-                       $km->izmjeni($k);
-                       header('Location: administratori.php'); 
+                       $uc = new Clanarina();
+                       $uc->SetClanarId($_GET['id']);
+                       $uc->SetClanarNaziv($_POST['naziv']);
+                       $cl->izmjeniClanarine($uc);
+                       header('Location: Administratori.php'); 
                    }		
                    break;
 	
-    case 'delete': $km->brisi($_GET['id']);
-        	   header('Location: administratori.php'); 
+    case 'delete': $cl->brisiClanarine($_GET['id']);
+        	   header('Location: Administratori.php'); 
 		   break;
 				   
-    default : 	   $kategorije = $km->dohvatiKategorije();
-		   $template = 'ad_pregled'; 	  
+    default : 	   
+                    $clanarine = $cl->dohvatiClanarine();
+		   $template = 'ad_view'; 	  
 }
 
 // UKLJUCI VIEW
-include '../view/indexAdmin.php';
+include './indexAdmin.php';
 ?>

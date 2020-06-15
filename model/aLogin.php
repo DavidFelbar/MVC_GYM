@@ -26,7 +26,7 @@ if ($r && $r->num_rows == 1) {
     }
 }
     else  {
-    header("Location: ../view/index.php");
+    header("Location: ../index.php");
 }
 ?>
 

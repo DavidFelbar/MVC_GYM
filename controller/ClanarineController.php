@@ -4,8 +4,8 @@
 class Clanarine {
 
     private $db;
-    private $clanarina = array();
-
+    private $clanarine = array();
+    private $Clanarina;
     public function __construct() {
         $this->db = DB::connect();
     }
@@ -15,24 +15,32 @@ class Clanarine {
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $c = new Clanarina();
-            $c->GetClanarId($row['idClan']);
-            $c->GetClanarNaziv($row['nazivClan']);
-            $c->GetClanarCijena($row['cijena']);
-            $c->GetDolasci($row['maxDolasci']);
+            $c->SetClanarId($row['idClan']);
+            $c->SetClanarNaziv($row['nazivClan']);
+            $c->SetClanarCijena($row['cijena']);
+            $c->SetDolasci($row['maxDolasci']);
             
-            $this->clanarina[] = $c;
+            $this->clanarine[] = $c;
         }
 
-        return $this->clanarina;
+        return $this->clanarine;
     }
 
+    public function izmjeniClanarine($Clanarina){
+		$id = $Clanarina->GetClanarId();
+		$naziv = $Clanarina->GetClanarNaziv();
+                $cijena=$Clanarina->GetClanarCijena();
+                $dolasci=$Clanarina->GetDolasci();
+		$sql = "UPDATE clanarina SET nazivClan='$naziv',cijena='$cijena',maxDolasci='$dolasci' WHERE id=$id";
+		$this->c->query($sql);
+	}
     public function brisiClanarine($idClan) {
-        $sql = "DELETE FROM clanarina WHERE id=$idClan LIMIT 1";
+        $sql = "DELETE FROM clanarina WHERE idClan=$idClan LIMIT 1";
         $this->db->query($sql);
     }
 
-    public function unosClanarine($idClan,$nazivClan,$cijena,$maxDolasci) {
-        $sql = "INSERT INTO clanarina(idClan,nazivClan,cijena,maxDolasci) VALUES ('$idClan,$nazivClan,$cijena,$maxDolasci')";
+    public function unosClanarine($nazivClan,$cijena,$maxDolasci) {
+        $sql = "INSERT INTO clanarina VALUES (''',$nazivClan,$cijena,$maxDolasci')";
         $this->db->query($sql);
     }
 
