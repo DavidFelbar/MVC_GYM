@@ -10,7 +10,7 @@ class Programi {
         $this->db = DB::connect();
     }
     public function dohvatiSvePrograme() {
-        $sql = "SELECT idProg, nazivProg,opisProg,tipProg,ocjena,idTren FROM programi ORDER BY idTren";
+        $sql = "SELECT idProg,nazivProg,opisProg,tipProg,ocjena,idTren FROM programi ORDER BY idTren";
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $p = new Program();
