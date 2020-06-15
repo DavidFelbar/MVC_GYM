@@ -25,7 +25,8 @@ $cla = new Clanovi();
 // GLAVNI SWITCH
 switch($a) 
 {
-    case 'create': $cl->unosClanarine($_POST['naziv'],$_POST['cijena'],$_POST['maxdolasci']); 
+    case 'create': $cl->unosClanarine($_POST['naziv'],$_POST['cijena'],$_POST['maxdolasci']);
+                   $cla->unosClanova();
 		   header('Location: Administratori.php');
 		   break;
                     
@@ -48,7 +49,7 @@ switch($a)
                    break;
 	
     case 'delete': $cl->brisiClanarine($_GET['id']);
-                   $cla->brisiClanove($_POST[])
+                   $cla->brisiClanove($_GET['id']);
         	   header('Location: Administratori.php'); 
 		   break;
 				   
