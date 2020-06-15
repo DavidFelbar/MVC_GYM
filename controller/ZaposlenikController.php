@@ -31,10 +31,10 @@ class Zaposlenici {
         $r = $this->db->query($sql);
         while ($row = $r->fetch_assoc()) {
             $z = new Zaposlenik();
-            $z->GetZapId($row['idZap']);
-            $z->GetZapIme($row['imeZap']);
-            $z->GetZapPrezime($row['prezimeZap']);
-            $z->GetIdKor($row['idKor']);
+            $z->SetZapId($row['idZap']);
+            $z->SetZapIme($row['imeZap']);
+            $z->SetZapPrezime($row['prezimeZap']);
+            $z->SetIdKor($row['idKor']);
      
             $this->zaposlenik[] = $z;
         }
