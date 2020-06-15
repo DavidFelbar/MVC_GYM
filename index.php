@@ -18,8 +18,8 @@ require_once('./klase/Pomocna.php');
 require_once('./klase/DB.php');
  $db=DB::connect();
  
- $programi=Pomocna::GetProgrami($_SESSION['idTren']);
- $clanarine=Pomocna::GetClanarine();
+ //$programi=Pomocna::GetProgrami($_SESSION['idTren']);
+ //$clanarine=Pomocna::GetClanarine();
  
  include 'view/index.php';
 ?>

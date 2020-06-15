@@ -4,6 +4,7 @@ class Clanovi {
 
     private $db;
     private $Clan = array();
+    private $clanovi;
 
     public function __construct() {
         $this->db = DB::connect();
@@ -28,7 +29,12 @@ class Clanovi {
 
         return $this->Clan;
     }
-
+    public function izmjeniClanove($clanovi){
+                $id=$clanovi->GetIdClana();
+                $pid=$clanovi->GetIdProg();
+		$sql = "UPDATE clanovi SET idProg='$pid' where idClana=$id";
+		$this->db->query($sql);
+    }
     public function brisiClanove($idClana) {
         $sql = "DELETE FROM clanovi WHERE id=$idClana LIMIT 1";
         $this->db->query($sql);

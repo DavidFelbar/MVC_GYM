@@ -24,7 +24,7 @@ switch($a)
 			$template = 'tr_update';
                    }
                    else{
-                       $pg = new Program();
+                       $pg = new Program($_GET['id']);
                        $pg->SetProgID($_GET['id']);
                        $pg->SetProgNaziv($_POST['nazivProg']);
                        $pg->SetProgOpis($_POST['opisProg']);
