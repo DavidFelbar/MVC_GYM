@@ -1,20 +1,8 @@
-<!-- ADMINISTRATOR - PREGLED -->
-﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
-<?php foreach ($clanarine as $c) { ?>
-    <p><?php echo $c->GetClanarNaziv(); ?>
-        - <a href="?a=update&id=<?php echo $c->GetClanarId(); ?>">IZMJENI</a>
-        - <a href="?a=delete&id=<?php echo $c->GetClanarId(); ?>">IZBRISI</a>
-    </p>
-<?php } ?>
-    <html>
-    
-    <form  method="post" action="?a=create">
-       
-        
-        <input type="text" name="naziv" >
-    
-
-      
+<!-- ADMINISTRATOR - UPDATE -->
+<!-- OBRAZAC ZA IZMJENU NAZIVA KATEGORIJE -->
+﻿<form method="post" action="?a=update&id=<?php echo $uc->GetClanarId();?>">
+    <input type="text" name="naziv" value="<?php echo $uc->GetClanarNaziv();?>">
+         
             <input type="text" name="cijena">
      
        
@@ -28,5 +16,4 @@
 
         
         <input type="submit" name="submit" value="Spremi">
-    </form>
-</html>
+</form>

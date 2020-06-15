@@ -22,10 +22,7 @@ $cl = new Clanarine();
 // GLAVNI SWITCH
 switch($a) 
 {
-    case 'create': $naziv=$_POST['naziv'];
-                    $cijena=$_POST['naziv'];
-                    $dolasci=$_POST['naziv'];
-                   $cl->unosClanarine(1,$naziv,$cijena,$dolasci); 
+    case 'create': $cl->unosClanarine($_POST['naziv'],$_POST['cijena'],$_POST['maxdolasci']); 
 		   header('Location: Administratori.php');
 		   break;
                     
@@ -39,6 +36,8 @@ switch($a)
                        $uc = new Clanarina();
                        $uc->SetClanarId($_GET['id']);
                        $uc->SetClanarNaziv($_POST['naziv']);
+                       $uc->SetClanarCijena($_POST['cijena']);
+                       $uc->SetDolasci($_POST['maxdolasci']);
                        $cl->izmjeniClanarine($uc);
                        header('Location: Administratori.php'); 
                    }		

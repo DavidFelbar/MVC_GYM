@@ -31,8 +31,8 @@ class Clanarine {
 		$naziv = $Clanarina->GetClanarNaziv();
                 $cijena=$Clanarina->GetClanarCijena();
                 $dolasci=$Clanarina->GetDolasci();
-		$sql = "UPDATE clanarina SET nazivClan='$naziv',cijena='$cijena',maxDolasci='$dolasci' WHERE id=$id";
-		$this->c->query($sql);
+		$sql = "UPDATE clanarina SET nazivClan='$naziv',cijena='$cijena',maxDolasci='$dolasci' WHERE id='$id';";
+		$this->db->query($sql);
 	}
     public function brisiClanarine($idClan) {
         $sql = "DELETE FROM clanarina WHERE idClan=$idClan LIMIT 1";
@@ -40,8 +40,10 @@ class Clanarine {
     }
 
     public function unosClanarine($nazivClan,$cijena,$maxDolasci) {
-        $sql = "INSERT INTO clanarina(idClan,nazivClan,cijena,dolasci) VALUES ('','$nazivClan',$cijena,$maxDolasci)";
+        
+        $sql = "INSERT INTO clanarina(nazivClan,cijena,maxDolasci) VALUES ('$nazivClan',$cijena,$maxDolasci)";
         $this->db->query($sql);
+        
     }
 
 }
