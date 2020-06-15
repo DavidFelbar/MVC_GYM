@@ -16,11 +16,13 @@ if ($r && $r->num_rows == 1) {
     $row = $r->fetch_assoc();
     $_SESSION['userClan'] = $username;
     $_SESSION['idKor'] = $row['idKor'];
-
+    $_SESSION['idZap']=$row['idZap'];
     switch ($row['idKor']) {
         case 3: header("Location: ../Admin/Administratori.php");
             break;
-        case 2: header("Location: ../Admin/Treneri.php");
+        case 2: 
+            
+            header("Location: ../Admin/Treneri.php");
             break;
         default: header("Location: ../index.php");
     }
