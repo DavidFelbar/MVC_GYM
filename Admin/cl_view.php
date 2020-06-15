@@ -1,4 +1,4 @@
-<<<<<<< OURS
+
 <!-- ADMINISTRATOR - PREGLED -->
 ﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
 
@@ -39,9 +39,12 @@
 <?php foreach ($programi as $pr) { ?>
     
     <table border="1"> 
-       <h3> "<?php echo $pr->GetProgNaziv();?>"</h3>
+      
            <tr>
-            <th>"<?php foreach ($zaposlenik as $z) { echo $z->GetZapIme();}?>"</th>
+            <th>"<?php foreach ($zaposlenik as $z) { 
+                echo 'Ime trenera:'. $z->GetZapIme();}
+                
+                ?>"</th>
 
         </tr>
        <tr>
