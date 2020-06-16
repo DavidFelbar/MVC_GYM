@@ -30,7 +30,7 @@
 
             ?>
             <td> <a href="?a=dolazakClan&idClana=<?php echo $cln->GetIdClana(); ?>&dolasci=<?php echo $cln->GetClanDolasci();?>">DOLAZAK</a> </td>
-            <td> <a href="?a=deleteClan&idClana=<?php echo $cln->GetIdClana(); ?>">IZBRISI</a> </td>
+            <td> <a href="?a=deleteClan&idClana=<?php echo $cln->GetIdClana(); ?>">IZBRIŠI</a> </td>
             <td> <a href="?a=resetClan&idClanarine=<?php echo $cln->GetIdClanarine(); ?>&idClana=<?php echo $cln->GetIdClana();?>">PRODULJI ČLANARINU</a> </td>
         </tr>
 
