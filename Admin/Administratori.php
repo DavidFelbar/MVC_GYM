@@ -9,7 +9,7 @@ require_once('../klase/Pomocna.php');
 require_once('../model/Zaposlenik.php');
 require_once('../model/Clanovi.php');
 require_once('../controller/ClanoviController.php');
-
+require_once('../controller/ZaposlenikController.php');
 require_once('../model/Clanarine.php');
 require_once('../controller/ClanarineController.php');
 
@@ -25,9 +25,18 @@ if (!isset($_GET['a'])) {
 // ADMINISTRATOR RADI CRUD NAD KATEGOIJAMA - INSTANCIRAMO KATEGORIJE MANAGER
 $cl = new Clanarine();
 $cc = new Clanovi();
+$zp = new Zaposlenici();
 
 // GLAVNI SWITCH
 switch ($a) {
+    case 'createTrener': $zp->unosZaposlenika($_POST['usernameTrenera'],$_POST['passTrenera'],$_POST['imeTrenera'], $_POST['prezimeTrenera'],2);
+         
+         header('Location: Administratori.php');
+        break;
+    case 'deleteTrener': $zp->brisiZaposlenike($_GET['idZap']);
+        header('Location: Administratori.php');
+        break;
+        
     case 'createClanarina': $cl->unosClanarine($_POST['naziv'], $_POST['cijena'], $_POST['maxdolasci']);
         header('Location: Administratori.php');
         break;
@@ -74,6 +83,7 @@ switch ($a) {
 
     default : $clanarine = $cl->dohvatiClanarine();
         $clan = $cc->dohvatiClanove();
+        $trener=$zp->dohvatiZaposlenike();
 
 
         $template = 'ad_view';

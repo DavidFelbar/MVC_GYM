@@ -57,7 +57,7 @@
             <th>NAZIV PROGRAMA</th>
             <th>TIP PROGRAMA</th>
             <th>OCJENA</th>
-            <th>OCIJENI</th>
+         
 
         </tr>
         <tr>
