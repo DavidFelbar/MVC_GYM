@@ -1,5 +1,4 @@
-<!-- ADMINISTRATOR - UPDATE -->
-<!-- OBRAZAC ZA IZMJENU NAZIVA KATEGORIJE -->
+
 <h2> Izmjena članarine: </h2>
 ﻿<form method="post" action="?a=updateClanarina&id=<?php echo $uc->GetClanarId();?>">
     
