@@ -1,11 +1,21 @@
 
-<!-- ADMINISTRATOR - PREGLED -->
-﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
-
 <?php foreach ($program as $p) { ?>
 
-    <table border="1"> 
-       <h2> MOJ PROGRAM"<?php echo $p->GetProgNaziv();?>"</h2>
+    
+    <div class='prvi'>
+        <h2 class='naslov'> MOJ PROGRAM"<?php echo $p->GetProgNaziv(); ?>"<div class='logout' ><?php echo '<b>' . "Korisnik: " . $_SESSION['userClan'] . " - " . "Status: " . strtoupper($_COOKIE['Status']) . '<b>' . "\t"; ?><a href="../model/logout.php">ODJAVA</a></div></h2></h2>
+
+<table border="1"> <tr>
+                <?php foreach ($zaposlenik as $zp) { 
+                if($zp->GetZapId()==$p->GetIdTren())
+                {
+                    echo '<th colspan="3">Trener:'. $zp->GetZapIme().'    '. $zp->GetZapPrezime().'</th>';
+                    
+                }
+                             
+                }
+                
+                ?></tr>
         <tr>
             <th>NAZIV PROGRAMA</th>
 
@@ -22,29 +32,29 @@
             echo '<td>' . $p->GetProgOcj();
             echo '</td>';
             ?>
- 
-            <td> <a href="?a=ocjena&id=<?php echo $p->GetProgId(); ?>">OCIJENI</a> </td>
-
-        </tr>
+     </tr>
     </table>
-    <h3>Opis programa: </h3>
+<p><a href="?a=ocjena&id=<?php echo $p->GetProgId(); ?>">OCIJENI</a> </p>
+    
+    <h2>Opis programa: </h2>
     <?php
-    echo $p->GetProgOpis();
+    echo '<p>'.$p->GetProgOpis();'</p>'
     ?>
 
-    <hr>
-    <br/>
-<?php } ?>
-  <h2> ODABIR PROGRAMA</h2>
+    <hr> 
+    </div>
+        <?php } ?>
+ 
+<h2 class='naslov'> ODABIR PROGRAMA</h2>
 <?php foreach ($programi as $pr) { ?>
-    
-    <table border="1"> 
+     <div class='drugi'>
+    <table class='table' border="1"> 
            
            <tr>
             <?php foreach ($zaposlenik as $zp) { 
                 if($zp->GetZapId()==$pr->GetIdTren())
                 {
-                    echo '<th colspan="4">Trener:'. $zp->GetZapIme().'    '. $zp->GetZapPrezime().'</th>';
+                    echo '<th colspan="3">Trener:'. $zp->GetZapIme().'    '. $zp->GetZapPrezime().'</th>';
                     
                 }
                              
@@ -69,16 +79,17 @@
             echo '<td>' . $pr->GetProgOcj();
             echo '</td>';
             ?>
-            
-         <td> <a href="?a=update&id=<?php echo $pr->GetProgId(); ?>">ODABERI</a> </td>
-        </tr>
-   
+           </tr>  
     </table>
-    <h3>Opis programa: </h3>
+           <p><a href="?a=update&id=<?php echo $pr->GetProgId(); ?>">ODABERI</a> </p>
+       
+   
+    
+    <h2>Opis programa: </h2>
     <?php
-    echo $pr->GetProgOpis();
+    echo '<p>'.$pr->GetProgOpis();'</p>'
     ?>
-
+  </div>
     <hr></br>
 <?php } ?>
 

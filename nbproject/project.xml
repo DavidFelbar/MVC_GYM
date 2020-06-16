@@ -8,6 +8,8 @@
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>IME</word>
             <word>POTVRDI</word>
+            <word>uređivati</word>
+            <word>članarinu</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

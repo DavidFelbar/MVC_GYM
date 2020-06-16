@@ -102,6 +102,14 @@
             .clanovi{
                 padding-left: 10px;
             }
+               .naziv{
+                font-size: 25px;
+                display: block;
+                color: white;
+                text-align: center;
+                float: left;
+                padding: 14px 16px;
+            }
 
             .naslov{
                 margin-bottom: 70px;
