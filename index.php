@@ -1,25 +1,39 @@
 <?php
+
 session_start();
-/*
 
 
 
-require_once ('./model/Admin.php');
 
-require_once ('./model/Clanovi.php');
-require_once ('./model/Login.php');
-require_once ('./model/Program.php');
-require_once ('./model/Trener.php');
-require_once ('./model/aLogin.php');
-*/
+
 require_once ('./model/Clanarine.php');
 require_once ('./model/Program.php');
 require_once('./klase/Pomocna.php');
 require_once('./klase/DB.php');
- $db=DB::connect();
- 
- //$programi=Pomocna::GetProgrami($_SESSION['idTren']);
- //$clanarine=Pomocna::GetClanarine();
- 
- include 'view/index.php';
+require_once ('./controller/ProgramiController.php');
+$db = DB::connect();
+$pr = new Programi();
+$program = $pr->dohvatiSvePrograme();
+//var_dump($p);
+//$programi=Pomocna::GetProgrami($_SESSION['idTren']);
+//$clanarine=Pomocna::GetClanarine();
+
+include 'view/index.php';
+
+foreach ($program as $p) {
+    
+   echo'<table border="2" cellpadding = "5" cellspacing = "5" width=30%>';
+   
+    echo '<tr>'.'<th>'. 'Naziv'.'</th>'.'<th>'  . 'Opis' . '</th>'. '<th>'. 'Tip programa' .'</th>'.'<th>'.'Ocjena' .'</th>'. '</tr>';
+
+    echo '<tr>' . '<td>' . $p->GetProgNaziv() . '</td>';
+
+    echo '<td>' . $p->GetProgOpis() . '</td>';
+    echo '<td>' . $p->GetProgTip() . '</td>';
+    echo '<td>' . $p->GetProgOcj() . '</td>' . '</tr>';
+    echo '</table>';
+    echo '<br>';
+    
+}
+
 ?>
