@@ -35,7 +35,7 @@
   <h2> ODABIR PROGRAMA</h2>
 <?php foreach ($programi as $pr) { ?>
     
-    <table border="1"> 
+    <table class='table' border="1"> 
            
            <tr>
             <?php foreach ($zaposlenik as $zp) { 
@@ -71,9 +71,9 @@
         </tr>
    
     </table>
-    <h3>Opis programa: </h3>
+    <h3 class='popis'>Opis programa: </h3>
     <?php
-    echo $pr->GetProgOpis();
+    echo '<span class="popis">'.$p->GetProgOpis();'</span>'
     ?>
 
     <hr></br>
