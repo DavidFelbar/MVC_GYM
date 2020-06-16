@@ -29,14 +29,14 @@ $zp = new Zaposlenici();
 
 // GLAVNI SWITCH
 switch ($a) {
-    case 'createTrener': $zp->unosZaposlenika($_POST['usernameTrenera'],$_POST['passTrenera'],$_POST['imeTrenera'], $_POST['prezimeTrenera'],2);
-         
-         header('Location: Administratori.php');
+    case 'createTrener': $zp->unosZaposlenika($_POST['usernameTrenera'], $_POST['passTrenera'], $_POST['imeTrenera'], $_POST['prezimeTrenera'], 2);
+
+        header('Location: Administratori.php');
         break;
     case 'deleteTrener': $zp->brisiZaposlenike($_GET['idZap']);
         header('Location: Administratori.php');
         break;
-        
+
     case 'createClanarina': $cl->unosClanarine($_POST['naziv'], $_POST['cijena'], $_POST['maxdolasci']);
         header('Location: Administratori.php');
         break;
@@ -65,8 +65,8 @@ switch ($a) {
 
 
     case 'createClan':
-        $rez=explode(',',$_POST['clanarina']);
-        $cc->unosClanova($_POST['usernameClana'], password_hash($_POST['passwordClana'],PASSWORD_DEFAULT), $_POST['imeClana'], $_POST['prezimeClana'], $rez[0], $rez[1]);
+        $rez = explode(',', $_POST['clanarina']);
+        $cc->unosClanova($_POST['usernameClana'], password_hash($_POST['passwordClana'], PASSWORD_DEFAULT), $_POST['imeClana'], $_POST['prezimeClana'], $rez[0], $rez[1]);
         header('Location: Administratori.php');
         break;
 
@@ -75,16 +75,17 @@ switch ($a) {
     case 'deleteClan': $cc->brisiClana($_GET['idClana']);
         header('Location: Administratori.php');
         break;
-    
-    case 'dolazakClan': $cc->dolazakClana($_GET['dolasci'],$_GET['idClana']);
-        
+
+    case 'dolazakClan': $cc->dolazakClana($_GET['dolasci'], $_GET['idClana']);
+
         header('Location: Administratori.php');
         break;
-
-
+    case 'resetClan': $cc->resetClana($_GET['idClanarine'], $_GET['idClana']);
+        header('Location: Administratori.php');
+        break;
     default : $clanarine = $cl->dohvatiClanarine();
         $clan = $cc->dohvatiClanove();
-        $trener=$zp->dohvatiZaposlenike();
+        $trener = $zp->dohvatiZaposlenike();
 
 
         $template = 'ad_view';

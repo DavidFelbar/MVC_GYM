@@ -38,6 +38,18 @@ class Clanovi {
 		$sql = "UPDATE clanovi SET dolasci=$dolasci WHERE idClana=$idClana";
 		$this->db->query($sql);
     }
+    public function resetClana($idClanarine,$idClana){
+        $cc=new Clan();
+        $id = $cc->GetIdClana();
+        $ime = $cc->GetClanIme();
+        $prezime = $cc->GetClanIme();
+        $upit1="SELECT idClan,maxDolasci from clanarina where idClan=$idClanarine";
+        $rez1=$this->db->query($upit1);
+        $r1=$rez1->fetch_assoc();
+        $noviDolasci=$r1['maxDolasci'];
+        $upit2="UPDATE clanovi SET dolasci=$noviDolasci WHERE idClana=$idClana";
+        $this->db->query($upit2);
+    }
     public function izmjeniClanove($clan){
 		$id = $clan->GetIdClana();
 		$ime = $clan->GetClanIme();
