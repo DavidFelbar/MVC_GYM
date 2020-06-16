@@ -75,7 +75,8 @@ switch ($a) {
     case 'deleteClan': $cc->brisiClana($_GET['idClana']);
         header('Location: Administratori.php');
         break;
-    case 'dolazakClan': $cc->dolazakClana($_GET['idClana']);
+    
+    case 'dolazakClan': $cc->dolazakClana($_GET['dolasci'],$_GET['idClana']);
         
         header('Location: Administratori.php');
         break;

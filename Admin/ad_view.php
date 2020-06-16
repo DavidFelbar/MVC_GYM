@@ -27,7 +27,7 @@
             echo '</td>';
 
             ?>
-            <td> <a href="?a=dolazakClan&idClana=<?php echo $cln->GetIdClana(); ?>">DOLAZAK</a> </td>
+            <td> <a href="?a=dolazakClan&idClana=<?php echo $cln->GetIdClana(); ?>&dolasci=<?php echo $cln->GetClanDolasci();?>">DOLAZAK</a> </td>
             <td> <a href="?a=deleteClan&idClana=<?php echo $cln->GetIdClana(); ?>">IZBRISI</a> </td>
         </tr>
 
