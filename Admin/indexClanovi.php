@@ -5,42 +5,94 @@
     <title>ČLAN</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style type="text/css">
+            select{
+                padding-right: 10px;
+                margin-left: 20px;
+            }
+            input[type=submit]{
+                margin-left: 20px;
+                width: 140px;
+                height: 30px;
+                color:white;
+                background-color: #333;
+            }
+            input[type=text]:focus{
+               background-color:  #bee6eb;
+            }
+
+            input[type=submit]:hover{
+                
+                background-color: #009cad;
+            }
+            th{
+                
+                padding-bottom: 2px;
+                border-bottom-color: #009cad;
+                border-bottom-width: 1px;
+                font-size: 15px;
+                font-weight: lighter;
+                background-color: #333;
+                color:white;
+            }
+            td{
+                
+                padding-top: 7px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .prvi{
+                background-color: #cccccc;
+
+                padding-bottom: 200px;
+            }
+            .logout{
+                letter-spacing: 2px;
+                position: top;
+                font-size: 12px;
+                padding: 0;
+                margin-top:10px;
+                float: right;
+                padding-top: 0px;
+            }
+            .logout b  {
+                height: 10px;
+               
+                font-size: 11px;
+                padding-left: 20px;
+            }
+            .logout b a{
+                 letter-spacing: 1px;
+                text-align: center;
+                padding-left:20px;
+                padding-right:20px;
+                padding-top:25px;
+                padding-bottom:22px;
+            }
+            a{
+                
+                font-size: 12px;
+                text-decoration: none;
+                color: white;
+                background-color: #333;
+                padding: 5px 12px 5px 12px;
+                margin: 4px 4px 4px 4px;
+                  
+            }
+            a:hover{
+                background-color: #009cad;
+            }
             body {
                 margin:0;
-               
+
                 font-family: Arial;
                 font-size: 12px;
-                background: #dedede;
+                background: #f0f0f0;
             }
             .clanovi{
                 padding-left: 10px;
             }
-            .naslovi
-            {
-                
-                margin-left: 30px;
-                
-            }
-            p.info {
-                background-color:#ccc;
-                font-size: 10px;
-                padding: 10px;
-            }
-
-            ul {
-                
-                border-bottom: 3px solid #006e7a;
-                position: sticky;
-                top:0;
-                width:100%;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
-
-            .naziv{
+               .naziv{
                 font-size: 25px;
                 display: block;
                 color: white;
@@ -49,31 +101,69 @@
                 padding: 14px 16px;
             }
 
-            li a {
-                float:right;
-                display: block;
+            .naslov{
+                margin-bottom: 10px;
+                margin-top:0px;
+                font-size: 30px;
                 color: white;
-                text-align: center;
-                padding: 22px 16px;
-                text-decoration: none;
+                border-bottom: 3px solid #006e7a;
+                position: sticky;
+                top:0;
+                width:100%;
+                list-style-type: none;
+
+                line-height: 1;
+                padding-bottom: 15px;
+                padding-top: 15px;
+                overflow: hidden;
+                background-color: #333;
             }
-
-
-            li a:hover {
+            button{
+                margin-left: 100px;
+                font-size: 15px;
+                color: white;
+                background-color: #333;
+            }
+            button:hover{
                 background-color: #009cad;
             }
-            .popis{
-                margin-top: 30px;
+            .pselect{
+                padding-bottom: 5px;
+                margin-bottom: 5px;
             }
-            table,.popis{
-                
+            p{
+
+                margin-left: 20px;
+                padding-bottom: 20px;
+                font-size: 15;
+            }
+            table{
+
+                font-size: 15px;
+                border-width: 2px;
+                border-collapse: collapse;
                 margin-left: 30px;
             }
+            .prvi{
+                background-color: #cccccc;
+                
+
+                padding-bottom: 0px;
+            }
+            .drugi 
+            {
+                text-align: center;  
+            }
+               .drugi table{
+                
+            }
+
         </style>
+        
     </head>
 
     <body>
-        <ul ><li class='naziv'><?php echo "Korisnik: ". $_SESSION['login']. " - ". "Status: ".strtoupper($_COOKIE['Status']);?></li><li> <a class='clanovi' href='../model/logout.php'>ODJAVA</a></li></ul>
+        
     <?php include("$template.php"); ?>
     </body>
 </html>
