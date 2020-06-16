@@ -40,7 +40,7 @@ class Clanovi {
 		$id = $clan->GetIdClana();
 		$ime = $clan->GetClanIme();
                 $prezime = $clan->GetClanIme();
-                $dolasci=$clan->GetDolasci();
+                //$dolasci=$clan->GetDolasci();
                 $idProg = $clan->GetIdProg();
 		$sql = "UPDATE clanovi SET idProg=$idProg WHERE idClana=$id";
 		$this->db->query($sql);

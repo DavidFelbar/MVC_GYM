@@ -115,5 +115,51 @@
 
     <input type="submit" name="submit" value="Spremi">
 </form>
+<table border="1"> 
+<h2> TRENERI: </h2>
+    <tr>
+        <th>IME TRENERA</th>
+        <th>PREZIME TRENERA</th>
+        <th>KORISNIČKO IME TRENERA</th>
+        <th>LOZINKA TRENERA</th>
+
+        
+        <th>IZBRISI</th>
+    </tr>
+    <?php foreach ($trener as $tr) { if ($tr->GetIdKor()<3){?>
 
 
+        <tr>
+            <?php 
+            echo '<td>' . $tr->GetZapIme();
+            echo '</td>';
+            echo '<td>' . $tr->GetZapPrezime();
+            echo '</td>';
+            echo '<td>' . $tr->GetZapUsername();
+            echo '</td>';
+            echo '<td>' . $tr->GetZapPassword();
+            echo '</td>';
+          
+
+            ?>
+            
+            <td> <a href="?a=deleteTrener&idZap=<?php echo $tr->GetZapId(); ?>">IZBRISI</a> </td>
+        </tr>
+
+    <?php }} ?>
+</table>
+<hr>
+<html>
+    <h2> Unos novog Trenera:</h2>
+    <form  method="post" action="?a=createTrener">
+
+        <p>  Ime trenera <input type="text" name="imeTrenera" >  </p>
+        <p>  Prezime člana <input type="text" name="prezimeTrenera"> </p>
+         <p> Username: <input type="text" name="usernameTrenera" >  </p>
+        <p>  Password: <input type="text" name="passTrenera"> </p>
+ 
+        <input type="submit" name="submit" value="Spremi">
+        
+    </form>
+</html>
+<hr>
