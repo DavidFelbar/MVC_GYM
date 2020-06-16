@@ -8,7 +8,7 @@ class Zaposlenici {
     public function __construct() {
         $this->db = DB::connect();
     }
-
+    /* OVO OBRISATI PRIJE PREDAJE
     public function dohvatiZaposlenika($idProg) {
         $sql = "SELECT  zaposlenici.imeZap,zaposlenici.prezimeZap,zaposlenici.idZap from zaposlenici inner join programi on programi.idTren=zaposlenici.idZap WHERE program.idProg=$idProg";
         $r = $this->db->query($sql);
@@ -25,7 +25,7 @@ class Zaposlenici {
         
         return $this->zaposlenik;
     }
-
+*/
     public function dohvatiZaposlenike() {
         $sql = "SELECT idZap,imeZap,prezimeZap,idKor FROM zaposlenici";
         $r = $this->db->query($sql);

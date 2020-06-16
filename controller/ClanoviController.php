@@ -28,7 +28,14 @@ class Clanovi {
 
         return $this->Clan;
     }
-
+    public function izmjeniClanove($clan){
+		$id = $clan->GetIdClana();
+		$ime = $clan->GetClanIme();
+                $prezime = $clan->GetClanIme();
+                $idProg = $clan->GetIdProg();
+		$sql = "UPDATE clanovi SET idProg=$idProg WHERE idClana=$id";
+		$this->db->query($sql);
+	}
     public function brisiClana($idClana) {
         $sql = "DELETE FROM clanovi WHERE idClana=$idClana LIMIT 1";
         $this->db->query($sql);
