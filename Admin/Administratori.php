@@ -25,7 +25,7 @@ if (!isset($_GET['a'])) {
 // ADMINISTRATOR RADI CRUD NAD KATEGOIJAMA - INSTANCIRAMO KATEGORIJE MANAGER
 $cl = new Clanarine();
 $cc = new Clanovi();
-$clan=new Clan($_SESSION['idClana']);
+
 // GLAVNI SWITCH
 switch ($a) {
     case 'createClanarina': $cl->unosClanarine($_POST['naziv'], $_POST['cijena'], $_POST['maxdolasci']);
@@ -57,7 +57,7 @@ switch ($a) {
 
     case 'createClan':
         $rez=explode(',',$_POST['clanarina']);
-        $cc->unosClanova($_POST['usernameClana'], $_POST['passwordClana'], $_POST['imeClana'], $_POST['prezimeClana'], $rez[0], $rez[1]);
+        $cc->unosClanova($_POST['usernameClana'], password_hash($_POST['passwordClana'],PASSWORD_DEFAULT), $_POST['imeClana'], $_POST['prezimeClana'], $rez[0], $rez[1]);
         header('Location: Administratori.php');
         break;
 
@@ -66,7 +66,7 @@ switch ($a) {
     case 'deleteClan': $cc->brisiClana($_GET['idClana']);
         header('Location: Administratori.php');
         break;
-    case 'dolazakClan': $cc->dolazakClana($clan);
+    case 'dolazakClan': $cc->dolazakClana($_GET['idClana']);
         
         header('Location: Administratori.php');
         break;
