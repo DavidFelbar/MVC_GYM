@@ -70,6 +70,29 @@
                 
                 margin-left: 30px;
             }
+            th{
+                
+                padding-bottom: 2px;
+                border-bottom-color: #009cad;
+                border-bottom-width: 1px;
+                font-size: 15px;
+                font-weight: lighter;
+                background-color: #333;
+                color:white;
+            }
+            table{
+                font-size: 15px;
+                border-width: 2px;
+                border-collapse: collapse;
+                margin-left: 30px;
+            }
+            td{
+                
+                padding-top: 7px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
         </style>
     </head>
 

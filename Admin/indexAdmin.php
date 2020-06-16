@@ -1,11 +1,12 @@
 <html>
     <head>
-          <!-- ADMINISTRATOR - INDEX -->
+        
         <title>ADMINISTRATOR</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <style type="text/css">
             
             select{
+                font-size: 16px;
                 padding-right: 10px;
                 margin-left: 20px;
             }
@@ -53,6 +54,7 @@
                 padding-bottom: 200px;
             }
             .logout{
+                z-index: 9;
                 letter-spacing: 2px;
                 position: top;
                 font-size: 12px;
@@ -63,17 +65,19 @@
             }
             .logout b  {
                 height: 10px;
-               
+                position: top;
                 font-size: 11px;
                 padding-left: 20px;
             }
             .logout b a{
-                 letter-spacing: 1px;
+                position: top;
+                letter-spacing: 1px;
                 text-align: center;
                 padding-left:20px;
                 padding-right:20px;
                 padding-top:25px;
                 padding-bottom:22px;
+                
             }
             a{
                 

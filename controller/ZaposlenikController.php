@@ -32,9 +32,10 @@ class Zaposlenici {
     public function brisiZaposlenike($idZap) {
         
         $sql = "DELETE FROM zaposlenici WHERE idZap=$idZap LIMIT 1";
-        $sql1 = "DELETE FROM programi WHERE idTren=$idZap";
-        $this->db->query1($sql);
+        $sql2="DELETE FROM programi where idTren=$idZap";
+        $this->db->query($sql2);
         $this->db->query($sql);
+        
     }
 
     public function unosZaposlenika( $usernameZap,$passwordZap,$imeZap, $prezimeZap, $idKor) {
