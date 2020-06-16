@@ -35,7 +35,7 @@ class Zaposlenici {
     }
 
     public function unosZaposlenika( $usernameZap,$passwordZap,$imeZap, $prezimeZap, $idKor) {
-        $sql = "INSERT INTO zaposlenici(usernameZap,passwordZap,imeZap,prezimeZap,idKor) VALUES ('$usernameZap','$passwordZap','$imeZap','$prezimeZap',$idKor,)";
+        $sql = "INSERT INTO zaposlenici(usernameZap,passwordZap,imeZap,prezimeZap,idKor) VALUES ('$usernameZap','$passwordZap','$imeZap','$prezimeZap',$idKor)";
         $this->db->query($sql);
     }
 
