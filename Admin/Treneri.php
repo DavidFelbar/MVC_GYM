@@ -10,7 +10,7 @@ if(!isset($_GET['a'])) { $a = ''; } else { $a = $_GET['a']; }
 
 $pr = new Programi();
 
-// GLAVNI SWITCH
+
 switch($a) 
 {
     case 'create': $pr->unosPrograma($_POST['nazivProg'],$_POST['opisProg'],$_POST['tipProg'],$_GET['idZap']); 
