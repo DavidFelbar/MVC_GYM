@@ -3,7 +3,7 @@
 
     
     <div class='prvi'>
-        <h2 class='naslov'> MOJ PROGRAM"<?php echo $p->GetProgNaziv(); ?>"<div class='logout' ><?php echo '<b>' . "Korisnik: " . $_SESSION['userClan'] . " - " . "Status: " . strtoupper($_COOKIE['Status']) . '<b>' . "\t"; ?><a href="../model/logout.php">ODJAVA</a></div></h2></h2>
+        <h2 class='naslov'> MOJ PROGRAM "<?php echo $p->GetProgNaziv(); ?>"<div class='logout' ><?php echo '<b>' . "Korisnik: " . $_SESSION['login'] . " - " . "Status: " . strtoupper($_COOKIE['Status']) . '<b>' . "\t"; ?><a href="../model/logout.php">ODJAVA</a></div></h2></h2>
 
 <table border="1"> <tr>
                 <?php foreach ($zaposlenik as $zp) { 
@@ -44,10 +44,11 @@
     <hr> 
     </div>
         <?php } ?>
- 
+
 <h2 class='naslov'> ODABIR PROGRAMA</h2>
 <?php foreach ($programi as $pr) { ?>
      <div class='drugi'>
+         <div class='odabir'>
     <table class='table' border="1"> 
            
            <tr>
@@ -89,6 +90,7 @@
     <?php
     echo '<p>'.$pr->GetProgOpis();'</p>'
     ?>
+         </div>
   </div>
     <hr></br>
 <?php } ?>

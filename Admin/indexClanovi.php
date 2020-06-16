@@ -138,7 +138,7 @@
                 font-size: 15;
             }
             table{
-
+                
                 font-size: 15px;
                 border-width: 2px;
                 border-collapse: collapse;
@@ -150,12 +150,17 @@
 
                 padding-bottom: 0px;
             }
-            .drugi 
+            .drugi h2 
             {
-                text-align: center;  
+               margin-left: 120px;
             }
-               .drugi table{
-                
+            .drugi  p
+            {
+               margin-left: 160px;
+            }
+            
+               .odabir {
+                margin-left: 500px;
             }
 
         </style>
