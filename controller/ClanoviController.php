@@ -28,12 +28,14 @@ class Clanovi {
 
         return $this->Clan;
     }
-    public function dolazakClana($clan,$idClana){
-		$id = $clan->GetIdClana();
-		$ime = $clan->GetClanIme();
-                $prezime = $clan->GetClanIme();
-                $idProg = $clan->GetIdProg();
-		$sql = "UPDATE clanovi SET dolasci=$dolasci WHERE idClana=$id";
+    public function dolazakClana($dolazak,$idClana){
+                $cc=new Clan();
+		$id = $cc->GetIdClana();
+		$ime = $cc->GetClanIme();
+                $prezime = $cc->GetClanIme();
+                $idProg = $cc->GetIdProg();
+                $dolasci=$dolazak-1;
+		$sql = "UPDATE clanovi SET dolasci=$dolasci WHERE idClana=$idClana";
 		$this->db->query($sql);
     }
     public function izmjeniClanove($clan){
