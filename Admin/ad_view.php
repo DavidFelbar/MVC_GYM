@@ -1,6 +1,6 @@
-
+<div class="prvi">
 <table border="1"> 
-    <h2> ČLANOVI: </h2>
+    <h2 class='naslov'> ČLANOVI: 
     <tr>
         <th>IME ČLANA</th>
         <th>PREZIME ČLANA</th>
@@ -35,9 +35,10 @@
 
 <?php } ?>
 </table>
-<hr>
+</div>
+
 <html>
-    <h2> Unos novog člana:</h2>
+    <h2 class="naslov"> Unos novog člana:</h2>
     <form  method="post" action="?a=createClan">
 
         <p>  Ime člana <input type="text" name="imeClana" >  </p>
@@ -64,10 +65,10 @@
         
     </form>
 </html>
-
+<div class="prvi">
 <!--IZMJENA I UNOS CLANARINA-->
 <table border="1"> 
-    <h2> Izmjena članarina: </h2>
+    <h2 class='naslov'> Izmjena članarina: </h2>
     <tr>
         <th>NAZIV CLANARINE</th>
         <th>CIJENA CLANARINE</th>
@@ -93,9 +94,9 @@
 
 <?php } ?>
 </table>
-<hr>
+</div>
 
-<h2> Unos nove članarine:</h2>
+<h2 class='naslov'> Unos nove članarine:</h2>
 <form  method="post" action="?a=create">
 
 
@@ -117,8 +118,10 @@
 
     <input type="submit" name="submit" value="Spremi">
 </form>
+    <div class="prvi">
 <table border="1"> 
-<h2> TRENERI: </h2>
+
+<h2 class='naslov'> TRENERI: </h2>
     <tr>
         <th>IME TRENERA</th>
         <th>PREZIME TRENERA</th>
@@ -150,9 +153,9 @@
 
     <?php }} ?>
 </table>
-<hr>
+</div>
 <html>
-    <h2> Unos novog Trenera:</h2>
+    <h2 class='naslov'> Unos novog Trenera:</h2>
     <form  method="post" action="?a=createTrener">
 
         <p>  Ime trenera <input type="text" name="imeTrenera" >  </p>
