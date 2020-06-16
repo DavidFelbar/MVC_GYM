@@ -4,7 +4,7 @@ $db = DB::connect();
 session_start();
 
 $username = $_POST['username'];
-$pass = password_verif($_POST['pass'],PASSWORD_DEFAULT);
+$pass = hash($_POST['pass']);
 
 
 
