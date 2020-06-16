@@ -1,11 +1,8 @@
 
-<!-- ADMINISTRATOR - PREGLED -->
-﻿<!-- ISPIS SVIH KATEGORIJA U BAZI -->
-
 <?php foreach ($program as $p) { ?>
 
     <table border="1"> 
-       <h2> MOJ PROGRAM"<?php echo $p->GetProgNaziv();?>"</h2>
+       <h2 class='naslovi'> MOJ PROGRAM"<?php echo $p->GetProgNaziv();?>"</h2>
         <tr>
             <th>NAZIV PROGRAMA</th>
 
@@ -27,12 +24,12 @@
 
         </tr>
     </table>
-    <h3>Opis programa: </h3>
+    <h3 class='popis'>Opis programa: </h3>
     <?php
-    echo $p->GetProgOpis();
+    echo '<span class="popis">'.$p->GetProgOpis();'</span>'
     ?>
 
-    <hr>
+    <hr> 
     <br/>
 <?php } ?>
   <h2> ODABIR PROGRAMA</h2>
@@ -70,7 +67,7 @@
             echo '</td>';
             ?>
             
-         <td> <a href="?a=update&id=<?php echo $pr->GetProgId(); ?>">ODABERI</a> </td>
+         <td> <a class='clanovi' href="?a=update&id=<?php echo $pr->GetProgId(); ?>">ODABERI</a> </td>
         </tr>
    
     </table>
