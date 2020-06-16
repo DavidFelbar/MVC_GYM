@@ -19,21 +19,19 @@ $program = $pr->dohvatiSvePrograme();
 //$clanarine=Pomocna::GetClanarine();
 
 include 'view/index.php';
-
+echo'<table border="2" cellpadding = "5" cellspacing = "5" width=30%>';
+echo '<tr>'.'<th>'. 'Naziv'.'</th>'.'<th>'  . 'Opis' . '</th>'. '<th>'. 'Tip programa' .'</th>'.'<th>'.'Ocjena' .'</th>'. '</tr>';
 foreach ($program as $p) {
-    
-   echo'<table border="2" cellpadding = "5" cellspacing = "5" width=30%>';
-   
-    echo '<tr>'.'<th>'. 'Naziv'.'</th>'.'<th>'  . 'Opis' . '</th>'. '<th>'. 'Tip programa' .'</th>'.'<th>'.'Ocjena' .'</th>'. '</tr>';
 
     echo '<tr>' . '<td>' . $p->GetProgNaziv() . '</td>';
 
     echo '<td>' . $p->GetProgOpis() . '</td>';
     echo '<td>' . $p->GetProgTip() . '</td>';
     echo '<td>' . $p->GetProgOcj() . '</td>' . '</tr>';
+}
     echo '</table>';
     echo '<br>';
     
-}
+
 
 ?>
