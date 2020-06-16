@@ -1,8 +1,9 @@
 <div class="prvi">
 <table border="1"> 
     <h2 class='naslov'> ČLANOVI: 
+        <div class='logout' ><?php echo '<b>' . "Korisnik: " . $_SESSION['userClan'] . " - " . "Status: " . strtoupper($_COOKIE['Status']) . '<b>'."\t"; ?><a href="../model/logout.php">ODJAVA</a></div></h2>
     <tr>
-        <th>IME ČLANA</th>
+         <th>IME ČLANA</th>
         <th>PREZIME ČLANA</th>
         <th>KORISNIČKO IME ČLANA</th>
         <th>LOZINKA ČLANA</th>
@@ -45,8 +46,9 @@
         <p>  Prezime člana <input type="text" name="prezimeClana"> </p>
         <p>  Korisničko člana <input type="text" name="usernameClana" >  </p>
         <p>  Lozinka člana <input type="text" name="passwordClana"> </p>
-        <p> Odabir članarine za novog člana </p>
+        <p class='pselect'> Odabir članarine za novog člana </p>
         <select  name="clanarina" id="clanarina">
+            
          <?php
          foreach ($clanarine as $test) {
             $naziv=$test->GetClanarNaziv();
@@ -61,6 +63,7 @@
         //    echo '<input type="hidden" name="dolasci" value="'. $test->GetDolasci().'">';
             ?>
         </select>
+        
         <input type="submit" name="submit" value="Spremi">
         
     </form>
@@ -118,9 +121,9 @@
 
     <input type="submit" name="submit" value="Spremi">
 </form>
-    <div class="prvi">
+<div class="prvi">
 <table border="1"> 
-
+    
 <h2 class='naslov'> TRENERI: </h2>
     <tr>
         <th>IME TRENERA</th>
