@@ -46,8 +46,8 @@ switch($a)
         
        $program = $pp->dohvatiProgram($_SESSION['idProg']);
         $programi = $pr->dohvatiSvePrograme();
-        $zaposlenik = $zp->dohvatiZaposlenike();
-
+       $zaposlenik = $zp->dohvatiZaposlenike();
+       
         $template = 'cl_view';
 }
 include './indexClanovi.php';
