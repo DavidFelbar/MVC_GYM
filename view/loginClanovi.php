@@ -79,10 +79,10 @@
 <body>
 <p class='naslov'>LOGIN ZA ČLANOVE</p>
 <form name="form1" method="post" action ="../model/Login.php">
-    <p>Username: 
+    <p>Korisničko ime: 
     <input name="username" type="text" id="username">
   </p >
-  <p>Password: 
+  <p>Lozinka: 
     <input name="pass" type="password" id="pass"><button type="submit">POTVRDI</button>
   </p>
   

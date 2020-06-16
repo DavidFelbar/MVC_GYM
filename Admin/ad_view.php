@@ -3,7 +3,7 @@
     <h2 class='naslov'> ČLANOVI: 
         <div class='logout' ><?php echo '<b>' . "Korisnik: " . $_SESSION['userClan'] . " - " . "Status: " . strtoupper($_COOKIE['Status']) . '<b>'."\t"; ?><a href="../model/logout.php">ODJAVA</a></div></h2>
     <tr>
-         <th>IME ČLANA</th>
+        <th>IME ČLANA</th>
         <th>PREZIME ČLANA</th>
         <th>KORISNIČKO IME ČLANA</th>
         <th>LOZINKA ČLANA</th>
@@ -59,8 +59,6 @@
             
          }
         
-           // echo '<input type="hidden" name="idClanarine" value="'. $test->GetClanarId().'">';
-        //    echo '<input type="hidden" name="dolasci" value="'. $test->GetDolasci().'">';
             ?>
         </select>
         
@@ -69,7 +67,7 @@
     </form>
 </html>
 <div class="prvi">
-<!--IZMJENA I UNOS CLANARINA-->
+
 <table border="1"> 
     <h2 class='naslov'> Izmjena članarina: </h2>
     <tr>
@@ -77,7 +75,7 @@
         <th>CIJENA CLANARINE</th>
         <th>MAKSIMALAN BROJ DOLAZAKA</th>
         <th>IZMJENI</th>
-        <th>IZBRISI</th>
+        <th>IZBRIŠI</th>
     </tr>
     <?php foreach ($clanarine as $c) { ?>
 
@@ -103,23 +101,24 @@
 <form  method="post" action="?a=create">
 
 
-    <p>  Naziv članarine <input type="text" name="naziv" >  </p>
+    <p>  Naziv članarine: <input type="text" name="naziv" >  </p>
 
 
 
-    <p>  Cijena članarine <input type="text" name="cijena">
+    <p>  Cijena članarine: <input type="text" name="cijena">
 
 
-    <p>Broj dolazaka:</p>
+    <p>Broj dolazaka:<br>
+    
     <input type="radio" id="dva" value="9" name="maxdolasci" >
     <label for="dva">9 dolazaka - Dva puta tjedno</label><br>
     <input type="radio" id="tri"  value="13" name="maxdolasci">
     <label for="tri">13 dolazaka - Tri puta tjedno</label><br>
     <input type="radio"  value="99" id="nolimit" name="maxdolasci">
-    <label for="nolimit">Neograničeno dolazaka - No limit</label><br>
-    <br>
+    <label for="nolimit">Neograničeno dolazaka - No limit</label>
+   
 
-    <input type="submit" name="submit" value="Spremi">
+    <input type="submit" name="submit" value="Spremi"></p>
 </form>
 <div class="prvi">
 <table border="1"> 
@@ -132,7 +131,7 @@
         <th>LOZINKA TRENERA</th>
 
         
-        <th>IZBRISI</th>
+        <th>IZBRIŠI</th>
     </tr>
     <?php foreach ($trener as $tr) { if ($tr->GetIdKor()<3){?>
 
@@ -161,10 +160,10 @@
     <h2 class='naslov'> Unos novog Trenera:</h2>
     <form  method="post" action="?a=createTrener">
 
-        <p>  Ime trenera <input type="text" name="imeTrenera" >  </p>
-        <p>  Prezime člana <input type="text" name="prezimeTrenera"> </p>
-         <p> Username: <input type="text" name="usernameTrenera" >  </p>
-        <p>  Password: <input type="text" name="passTrenera"> </p>
+        <p>  Ime trenera: <input type="text" name="imeTrenera" >  </p>
+        <p>  Prezime trenera: <input type="text" name="prezimeTrenera"> </p>
+         <p> Korisničko ime: <input type="text" name="usernameTrenera" >  </p>
+        <p>  Lozinka trenera: <input type="text" name="passTrenera"> </p>
  
         <input type="submit" name="submit" value="Spremi">
         
