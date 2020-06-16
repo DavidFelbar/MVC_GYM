@@ -6,6 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <!-- CSS - UREDENJE TIJELA I DODATNIH INFORMACIJA O CLANKU -->
         <style type="text/css">
+            .div
+            {
+                float: right;
+                width:50%;
+            }
+
             body {
                 margin:0;
                
@@ -72,8 +78,14 @@
         <ul ><li class='naziv'>MVC GYM </li><li><a class='zaposlenici' href='./view/loginZaposlenici.php' >LOGIN ZAPOSLENICI</a></li><li> <a class='clanovi' href='./view/loginClanovi.php'>LOGIN CLANOVI</a></li></ul>
         <br>
         <h2 class='popis'>POPIS PROGRAMA</h2>
+        <div class='div'>
+            <p>MVC Gym aplikacija</p>
+            <p>CLANOVI: mogu birati program za sebe te ga ocijeniti</p>
+            <p>ZAPOSLENICI: TRENERI: mogu upisivati nove programe i uređivati postojeće ako su autor </p>
+            <p>ZAPOSLENICI: ADMINI: mogu upisivati i brisati trenere i članove, uređivati članarine i pratiti dolaske članova</p>
+        </div>
 
-
-    </table>
+   
 </body>
+
 </html>
